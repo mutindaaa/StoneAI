@@ -255,7 +255,13 @@ def pass_network(
     # Connection threshold stays at min_passes (default 3)
     connections = connections[connections["n"] >= min_passes]
 
+    # Debug: print coordinate ranges so caller can verify spread
+    print(f"[pass_network] {team}: avg_x range [{player_df['avg_x'].min():.1f}, {player_df['avg_x'].max():.1f}]  "
+          f"avg_y range [{player_df['avg_y'].min():.1f}, {player_df['avg_y'].max():.1f}]  "
+          f"nodes={len(player_df)}")
+
     # ── Draw connection lines ─────────────────────────────────────────────────
+    # VerticalPitch axis swap: first arg = y (horizontal), second = x (vertical)
     max_n = connections["n"].max() if not connections.empty else 1
     player_index = player_df.index.astype(str)
 
@@ -267,27 +273,28 @@ def pass_network(
                 continue
             lw = 1.5 + (row["n"] / max_n) * 8.0
             pitch.lines(
-                px["avg_x"].iloc[0], px["avg_y"].iloc[0],
-                rx["avg_x"].iloc[0], rx["avg_y"].iloc[0],
+                px["avg_y"].iloc[0], px["avg_x"].iloc[0],
+                rx["avg_y"].iloc[0], rx["avg_x"].iloc[0],
                 lw=lw, color="white", alpha=0.4, zorder=2, ax=ax,
             )
 
     # ── Draw player nodes ────────────────────────────────────────────────────
+    # VerticalPitch: first positional arg = y (horizontal), second = x (vertical)
     pitch.scatter(
-        player_df["avg_x"], player_df["avg_y"],
+        player_df["avg_y"], player_df["avg_x"],
         s=player_df["n_passes"] * 20 + 200,
         color="#f7c59f", edgecolors="white", linewidths=1.5,
         zorder=4, ax=ax,
     )
 
-    # Labels: last name only, 12pt offset above node so they don't overlap
+    # Labels: every node, last name only, offset (2, 2) so label clears the dot
     for player, row in player_df.iterrows():
         parts = str(player).split()
         short = parts[-1] if len(parts) > 1 else str(player)
         ax.annotate(
-            short, (row["avg_x"], row["avg_y"]),
-            fontsize=7, color="white", ha="center", va="bottom",
-            xytext=(0, 12), textcoords="offset points",
+            short, (row["avg_y"], row["avg_x"]),
+            fontsize=8, color="white", ha="left", va="bottom",
+            xytext=(2, 2), textcoords="offset points",
         )
 
     return fig, ax
