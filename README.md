@@ -1,185 +1,87 @@
-# Stone AI
+﻿# Stone AI
 
-> AI-powered soccer analytics platform combining computer vision and structured event data.
+**Sport-agnostic analytics platform that extracts professional-grade intelligence from raw match video — built for clubs, academies, and leagues that don't have access to enterprise data providers.**
 
-Stone AI processes raw match video end-to-end — from player detection through team classification,
-event extraction, and statistical analytics — and exposes everything through a REST API and
-Streamlit dashboard.
+Stone AI bridges the gap between raw video and actionable analytics. Point it at any match footage — broadcast, Veo, or phone camera — and it produces the same shot maps, player valuation scores, possession metrics, and tactical reports that only top-flight clubs currently get.
 
 ---
 
 ## What it does
 
-| Layer | Capability |
-|-------|-----------|
-| **Detection** | Detects players, ball, and referees frame-by-frame using a fine-tuned YOLOv8x model |
-| **Tracking** | Maintains player IDs across frames with BoT-SORT; handles occlusion and camera cuts |
-| **Team classification** | Assigns players to teams using SigLIP jersey-color embeddings + UMAP clustering |
-| **Spatial calibration** | Maps pixel coordinates to real-world metres via homography (ViewTransformer) |
-| **Metrics** | Computes speed, distance, sprint zones, and possession per player per match |
-| **Event detection** | Identifies passes, shots, and possession changes as structured timestamped events |
-| **xT analytics** | Runs Expected Threat (xT) player valuation using a corpus-fitted 12×16 Karun Singh grid |
-| **Visualizations** | Generates shot maps, pass networks, player heatmaps, and xT bar charts via mplsoccer |
-| **Open data** | Connects to StatsBomb open data (40+ competitions) via kloppy for benchmark analysis |
-| **API** | FastAPI server for submitting jobs, polling status, and fetching results |
-| **Dashboard** | Streamlit UI with live job queue, results viewer, and analytics explorer |
+**Video intelligence pipeline**
+- Detects and tracks players, ball, and referees using YOLOv8 (custom-trained)
+- Classifies players into teams automatically via SigLIP jersey color embeddings + KMeans clustering
+- Handles broadcast cameras (panning/zooming) with optical flow compensation
+- Transforms pixel coordinates into real-world pitch meters via homography
+- Computes per-player speed, distance, and sprint counts
+- Detects passes, shots, and possession changes as structured events
+- Generates radar mini-map overlay and highlight clip exports
+- Scales to full 90-minute matches via chunked streaming (O(1) RAM)
+
+**Data analytics layer**
+- Ingests structured event data from StatsBomb, Opta, Wyscout via kloppy
+- Converts events to SPADL format and computes VAEP + xT player valuation scores
+- Generates shot maps, pass networks, heatmaps, and player radar charts via mplsoccer
+- Video-derived events feed into the same analytics engine as structured data
+- Streamlit dashboard with match explorer and analytics tab
+
+**Multi-sport architecture**
+- Soccer: full pipeline operational
+- Basketball: architecture in place, expanding for NBA Africa use case
 
 ---
 
 ## Quickstart
 
-### 1. Install
-
-```bash
-git clone https://github.com/mutindaaa/StoneAI.git
+\\\ash
+git clone https://github.com/mutindaaa/StoneAI
 cd StoneAI
-pip install -e .
+pip install -r requirements.txt
 
-# For CUDA-accelerated PyTorch (recommended):
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
-
-# Roboflow Sports (pitch config + ViewTransformer):
-pip install git+https://github.com/roboflow/sports.git
-```
-
-### 2. Download models
-
-Models are not committed to this repo due to file size. Download and place in `models/`:
-
-| File | Description |
-|------|-------------|
-| `models/best.pt` | Fine-tuned YOLOv8x for player/ball/referee detection |
-| `models/yolov8x.pt` | Base YOLOv8x weights |
-| `models/pitch_detection.pt` | Pitch keypoint detector |
-
-### 3. Run the pipeline
-
-```bash
-# Process a match video using a config file
+# Run with a match config (recommended)
 python main_v3.py --config match_configs/example_match.json
 
-# Auto-detect teams (no roster needed)
-python main_v3.py --config match_configs/auto_template.json --auto
+# Zero-config auto mode
+python main_v3.py --video input_videos/game.mp4 --auto --units imperial
 
-# Generate highlight clips and a reel
-python main_v3.py --config match_configs/example_match.json --clips --reel
+# Full pipeline + analytics + highlight clips
+python main_v3.py --config match_configs/example_match.json --analytics --clips
+\\\
 
-# Run analytics after pipeline
-python main_v3.py --config match_configs/example_match.json --analytics
-```
+## Models
 
-### 4. Run analytics standalone
+Models are not committed to this repo due to file size. Download to \models/\:
 
-```bash
-# StatsBomb open data (no credentials needed)
-python analytics/run_analysis.py --source statsbomb --match_id 3788741
-
-# Video-derived events from the pipeline
-python analytics/run_analysis.py --source video \
-    --events output_videos/my_match_events.json
-```
-
-On first run the xT model is fitted on 50 La Liga 2015/16 matches and cached to
-`analytics/xt_grid_cache.npy` (~2 min). Subsequent runs load from cache instantly.
-
-### 5. API server
-
-```bash
-uvicorn api.server:app --reload --port 8000
-# Docs at http://localhost:8000/docs
-```
-
-### 6. Dashboard
-
-```bash
-streamlit run dashboard/app.py
-```
-
----
+| Model | Purpose | Size |
+|-------|---------|------|
+| \est.pt\ | Custom YOLOv8 player/ball detection | 165MB |
+| \pitch_detection.pt\ | Pitch keypoint detection for radar | 134MB |
+| \yolov8x.pt\ | Base detection model | 131MB |
 
 ## Architecture
 
-```
-Input video
-    │
-    ▼
-┌─────────────────────────────────┐
-│  Tracker (BoT-SORT + YOLOv8x)  │  → player/ball bounding boxes + IDs
-└─────────────────────────────────┘
-    │
-    ▼
-┌─────────────────────────────────┐
-│  Team Classifier (SigLIP)       │  → team_id per player per frame
-└─────────────────────────────────┘
-    │
-    ▼
-┌─────────────────────────────────┐
-│  Camera Movement Estimator      │  → homography matrix per frame
-│  View Transformer               │  → pixel → metres mapping
-└─────────────────────────────────┘
-    │
-    ▼
-┌─────────────────────────────────┐
-│  Metrics + Event Detector       │  → speed, distance, passes, shots
-└─────────────────────────────────┘
-    │                    │
-    ▼                    ▼
-Annotated video     events.json + metrics.json
-                         │
-                         ▼
-               ┌─────────────────┐
-               │  Analytics      │  → xT, shot maps, pass networks
-               │  (kloppy /      │
-               │   mplsoccer)    │
-               └─────────────────┘
-```
+\\\
+Raw video (MP4/AVI)
+    ↓
+YOLOv8 detection → BoT-SORT tracking → SigLIP team classification
+    ↓
+Camera movement compensation (optical flow)
+    ↓
+ViewTransformer (pixel → pitch meters via homography)
+    ↓
+Speed/distance/possession/event detection
+    ↓
+Analytics layer (kloppy → SPADL → VAEP/xT → mplsoccer)
+    ↓
+Streamlit dashboard + JSON metrics + annotated video
+\\\
+
+## Target markets
+
+- Soccer clubs and academies in underserved markets (Africa, lower-tier US leagues)
+- NBA Africa basketball development infrastructure
+- Any club running Veo/BePro cameras that wants pro-level analytics without enterprise pricing
 
 ---
 
-## Match config
-
-Match configs live in `match_configs/`. Minimal example:
-
-```json
-{
-  "video_path": "input_videos/my_match.mp4",
-  "output_path": "output_videos/my_match_output.mp4",
-  "team1_name": "Home FC",
-  "team2_name": "Away United"
-}
-```
-
-See [match_configs/example_match.json](match_configs/example_match.json) for all options.
-
----
-
-## Project layout
-
-```
-stone-ai/
-├── main_v3.py                  # Pipeline entry point
-├── pyproject.toml              # Package definition & dependencies
-├── match_configs/              # Per-match JSON configs
-├── analytics/                  # xT, VAEP, mplsoccer visualizations
-│   ├── statsbomb_loader.py
-│   ├── spadl_pipeline.py       # Corpus-fitted xT grid
-│   ├── video_bridge.py         # Video events → SPADL
-│   ├── visualizer.py
-│   └── run_analysis.py         # CLI runner
-├── api/                        # FastAPI server
-├── dashboard/                  # Streamlit UI
-├── trackers/                   # BoT-SORT wrapper
-├── team_assigner/              # SigLIP team classifier
-├── camera_movement_estimator/
-├── speed_and_distance_estimator/
-├── player_ball_assigner/
-├── player_stats/
-├── radar/
-└── models/                     # Model weights (not committed — download separately)
-```
-
----
-
-## License
-
-MIT
+Built by [@mutindaaa](https://github.com/mutindaaa)
