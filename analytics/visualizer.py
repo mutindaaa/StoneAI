@@ -175,13 +175,18 @@ def pass_network(
     y_col = "coordinates_y" if "coordinates_y" in events_df.columns else "start_y"
 
     pitch = VerticalPitch(
-        pitch_type=pitch_type,
+        pitch_type="statsbomb",
+        pitch_length=120,
+        pitch_width=80,
         half=True,
         pitch_color="#0d1117",
         line_color="#6b7280",
+        pad_top=10,
         pad_bottom=10,
+        pad_left=10,
+        pad_right=10,
     )
-    fig, ax = pitch.draw(figsize=(10, 8))
+    fig, ax = pitch.draw(figsize=(12, 10))
     fig.patch.set_facecolor("#0d1117")
     ax.set_title(title, color="white", fontsize=14, pad=10)
 
@@ -200,7 +205,7 @@ def pass_network(
                 ha="center", va="center", color="white", fontsize=12)
         return fig, ax
 
-    # Scale kloppy [0, 1] → StatsBomb 120 × 80
+    # kloppy normalizes all coordinates to [0, 1]; scale to StatsBomb 120×80
     team_events["x_sb"] = team_events[x_col].clip(0, 1) * 120.0
     team_events["y_sb"] = team_events[y_col].clip(0, 1) * 80.0
 
