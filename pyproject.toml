@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "stone-ai"
+version = "0.1.0"
+description = "AI-powered soccer analytics platform combining computer vision and structured event data"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+dependencies = [
+    # Computer vision & detection
+    "ultralytics>=8.0.0",
+    "supervision>=0.22.0",
+    "opencv-python>=4.8.0",
+
+    # Numeric / data
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "scikit-learn>=1.3.0",
+    "matplotlib>=3.7.0",
+
+    # Deep learning (CPU fallback — for CUDA see INSTALL.md)
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+
+    # Team classification
+    "transformers>=4.37.0",
+    "umap-learn>=0.5.5",
+
+    # Jersey OCR
+    "easyocr>=1.7.0",
+
+    # Video utilities
+    "yt-dlp",
+
+    # API server
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.29.0",
+    "python-multipart>=0.0.9",
+
+    # Dashboard
+    "streamlit>=1.32.0",
+
+    # Soccer data & analytics
+    "kloppy>=3.14.0",
+    "mplsoccer>=1.3.0",
+    "statsbombpy>=1.0.3",
+    "socceraction>=1.3.0",
+    "soccerdata>=1.8.0",
+    "norfair>=2.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "ruff",
+    "pytest",
+    "pytest-cov",
+]
+
+[project.scripts]
+stone-ai = "main_v3:main"
+stone-analytics = "analytics.run_analysis:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["archive*", "training*", "runs*", "stubs*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
