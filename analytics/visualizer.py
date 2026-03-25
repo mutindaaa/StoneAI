@@ -177,37 +177,53 @@ def pass_network(
     pitch = VerticalPitch(
         pitch_type=pitch_type,
         half=True,
-        pitch_color="#1a1a2e",
-        line_color="#4a4a8a",
+        pitch_color="#0d1117",
+        line_color="#6b7280",
+        pad_bottom=10,
     )
     fig, ax = pitch.draw(figsize=(10, 8))
-    fig.patch.set_facecolor("#1a1a2e")
+    fig.patch.set_facecolor("#0d1117")
     ax.set_title(title, color="white", fontsize=14, pad=10)
 
-    # ── Filter passes for this team ──────────────────────────────────────────
-    et = _to_str_lower(events_df["event_type"])
-    team_passes = events_df[
-        (et == "pass") & (events_df[team_col] == team)
+    # Flip so defensive end is at top, attacking at bottom
+    ax.invert_yaxis()
+
+    # ── All team events → positions + pass counts ─────────────────────────────
+    # Use every team event (not just passes) for stable average-position
+    # computation so even low-volume passers get placed correctly.
+    team_events = events_df[
+        (events_df[team_col] == team) & events_df["player"].notna()
     ].copy()
 
-    if team_passes.empty or "player" not in team_passes.columns:
-        ax.text(0.5, 0.5, "Not enough pass data", transform=ax.transAxes,
+    if team_events.empty or "player" not in team_events.columns:
+        ax.text(0.5, 0.5, "Not enough data", transform=ax.transAxes,
                 ha="center", va="center", color="white", fontsize=12)
         return fig, ax
 
     # Scale kloppy [0, 1] → StatsBomb 120 × 80
-    team_passes = team_passes.copy()
-    team_passes["x_sb"] = team_passes[x_col].clip(0, 1) * 120.0
-    team_passes["y_sb"] = team_passes[y_col].clip(0, 1) * 80.0
+    team_events["x_sb"] = team_events[x_col].clip(0, 1) * 120.0
+    team_events["y_sb"] = team_events[y_col].clip(0, 1) * 80.0
 
-    # ── Average position per player ──────────────────────────────────────────
+    # Average position from all events with valid coordinates
     avg_pos = (
-        team_passes.groupby("player")[["x_sb", "y_sb"]]
+        team_events.dropna(subset=["x_sb", "y_sb"])
+        .groupby("player")[["x_sb", "y_sb"]]
         .mean()
         .rename(columns={"x_sb": "avg_x", "y_sb": "avg_y"})
     )
-    pass_counts = team_passes.groupby("player").size().rename("n_passes")
-    player_df = avg_pos.join(pass_counts).dropna()
+
+    # Pass counts per player
+    et_all = _to_str_lower(team_events["event_type"])
+    pass_counts = (
+        team_events[et_all == "pass"]
+        .groupby("player")
+        .size()
+        .rename("n_passes")
+    )
+
+    # Node threshold: ≥2 passes (lower than connection threshold of 3)
+    player_df = avg_pos.join(pass_counts).fillna({"n_passes": 0})
+    player_df = player_df[player_df["n_passes"] >= 2].dropna(subset=["avg_x", "avg_y"])
 
     if player_df.empty:
         ax.text(0.5, 0.5, "Could not compute player positions",
@@ -216,8 +232,6 @@ def pass_network(
         return fig, ax
 
     # ── Infer pass connections from sequential events ─────────────────────────
-    # Sort this team's events by period + timestamp; shift(-1) gives the next
-    # team-event player as the receiver.
     df_team_seq = (
         events_df[events_df[team_col] == team]
         .sort_values(["period_id", "timestamp"])
@@ -238,6 +252,7 @@ def pass_network(
         .reset_index(name="n")
     )
     connections.columns = ["passer", "receiver", "n"]
+    # Connection threshold stays at min_passes (default 3)
     connections = connections[connections["n"] >= min_passes]
 
     # ── Draw connection lines ─────────────────────────────────────────────────
@@ -246,17 +261,14 @@ def pass_network(
 
     for _, row in connections.iterrows():
         if row["passer"] in player_index and row["receiver"] in player_index:
-            x_vals = [
-                player_df.loc[player_df.index.astype(str) == row["passer"], "avg_x"].iloc[0],
-                player_df.loc[player_df.index.astype(str) == row["receiver"], "avg_x"].iloc[0],
-            ]
-            y_vals = [
-                player_df.loc[player_df.index.astype(str) == row["passer"], "avg_y"].iloc[0],
-                player_df.loc[player_df.index.astype(str) == row["receiver"], "avg_y"].iloc[0],
-            ]
+            px = player_df.loc[player_df.index.astype(str) == row["passer"]]
+            rx = player_df.loc[player_df.index.astype(str) == row["receiver"]]
+            if px.empty or rx.empty:
+                continue
             lw = 1.5 + (row["n"] / max_n) * 8.0
             pitch.lines(
-                x_vals[0], y_vals[0], x_vals[1], y_vals[1],
+                px["avg_x"].iloc[0], px["avg_y"].iloc[0],
+                rx["avg_x"].iloc[0], rx["avg_y"].iloc[0],
                 lw=lw, color="white", alpha=0.4, zorder=2, ax=ax,
             )
 
@@ -267,12 +279,15 @@ def pass_network(
         color="#f7c59f", edgecolors="white", linewidths=1.5,
         zorder=4, ax=ax,
     )
+
+    # Labels: last name only, 12pt offset above node so they don't overlap
     for player, row in player_df.iterrows():
-        short = str(player).split()[-1] if " " in str(player) else str(player)
+        parts = str(player).split()
+        short = parts[-1] if len(parts) > 1 else str(player)
         ax.annotate(
             short, (row["avg_x"], row["avg_y"]),
             fontsize=7, color="white", ha="center", va="bottom",
-            xytext=(0, 8), textcoords="offset points",
+            xytext=(0, 12), textcoords="offset points",
         )
 
     return fig, ax
