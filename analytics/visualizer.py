@@ -139,8 +139,12 @@ def shot_map(
 
 def pass_network(events_df: pd.DataFrame, team: str, title: str = "") -> tuple:
     """Draw pass network for a team using average player positions."""
+    import matplotlib as mpl
     import matplotlib.pyplot as plt
     from mplsoccer import Pitch
+
+    # DejaVu Sans ships with matplotlib and supports full Unicode (Turkish, etc.)
+    mpl.rcParams['font.family'] = 'DejaVu Sans'
 
     # Use a standard horizontal pitch with statsbomb coords (120x80)
     pitch = Pitch(
@@ -154,7 +158,7 @@ def pass_network(events_df: pd.DataFrame, team: str, title: str = "") -> tuple:
     )
     fig, ax = pitch.draw(figsize=(14, 9))
 
-    # Filter to this team's successful passes only
+    # Filter to this team's events
     team_events = events_df[
         events_df["team"].astype(str) == str(team)
     ].copy()
@@ -171,17 +175,25 @@ def pass_network(events_df: pd.DataFrame, team: str, title: str = "") -> tuple:
     passes["x"] = passes["coordinates_x"].fillna(0.5) * 120
     passes["y"] = passes["coordinates_y"].fillna(0.5) * 80
 
-    # Compute average position per player
+    # Use ALL team events for average position so the full tactical shape is
+    # captured — using only passes causes players to cluster where they pass
+    # rather than where they actually operate on the pitch.
+    team_events["x"] = team_events["coordinates_x"].fillna(0.5) * 120
+    team_events["y"] = team_events["coordinates_y"].fillna(0.5) * 80
+
     avg_pos = (
-        passes.groupby("player")[["x", "y"]]
+        team_events.dropna(subset=["x", "y"])
+        .groupby("player")[["x", "y"]]
         .mean()
         .reset_index()
         .rename(columns={"x": "avg_x", "y": "avg_y"})
     )
 
-    # Count passes per player for node sizing
+    # Count passes per player for node sizing; left-join so all positioned
+    # players appear even if they had very few passes (e.g. late substitutes)
     pass_counts = passes.groupby("player").size().reset_index(name="n_passes")
-    avg_pos = avg_pos.merge(pass_counts, on="player")
+    avg_pos = avg_pos.merge(pass_counts, on="player", how="left").fillna({"n_passes": 0})
+    avg_pos = avg_pos[avg_pos["n_passes"] >= 1]  # only players who actually passed
 
     # Infer receiver as the next event's player for the same team
     passes = passes.reset_index(drop=True)

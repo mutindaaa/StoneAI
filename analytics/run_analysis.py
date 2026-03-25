@@ -35,6 +35,12 @@ import os
 import sys
 from pathlib import Path
 
+# Force UTF-8 stdout/stderr on Windows so non-ASCII player names don't crash
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 # Ensure project root is on sys.path so `analytics.*` imports work when
 # this script is run directly (python analytics/run_analysis.py) or via
 # the main_v3.py subprocess call.
