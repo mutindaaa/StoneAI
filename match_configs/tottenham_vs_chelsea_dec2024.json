@@ -1,0 +1,199 @@
+{
+  "match_id": "spurs_vs_chelsea_2024_12_08",
+  "sport": "soccer",
+  "date": "2024-12-08",
+  "competition": "Premier League",
+  "venue": "Tottenham Hotspur Stadium",
+  "result": "3-4",
+  "note": "Spurs led 2-0, Chelsea won 4-3 with a stunning comeback. Palmer 2 pens, Sancho, Fernandez scored for Chelsea. Solanke and Kulusevski scored for Spurs.",
+
+  "team_home": {
+    "id": "tottenham",
+    "name": "Tottenham Hotspur",
+    "color_primary": "white",
+    "color_secondary": "navy",
+    "formation": "4-3-3",
+    "players": [
+      {
+        "jersey_number": 20,
+        "name": "Fraser Forster",
+        "position": "GK",
+        "player_id": "spurs_forster_20"
+      },
+      {
+        "jersey_number": 23,
+        "name": "Pedro Porro",
+        "position": "RB",
+        "player_id": "spurs_porro_23"
+      },
+      {
+        "jersey_number": 17,
+        "name": "Cristian Romero",
+        "position": "CB",
+        "player_id": "spurs_romero_17"
+      },
+      {
+        "jersey_number": 37,
+        "name": "Micky van de Ven",
+        "position": "CB",
+        "player_id": "spurs_vandeVen_37"
+      },
+      {
+        "jersey_number": 3,
+        "name": "Destiny Udogie",
+        "position": "LB",
+        "player_id": "spurs_udogie_3"
+      },
+      {
+        "jersey_number": 8,
+        "name": "Yves Bissouma",
+        "position": "CDM",
+        "player_id": "spurs_bissouma_8"
+      },
+      {
+        "jersey_number": 29,
+        "name": "Pape Matar Sarr",
+        "position": "CM",
+        "player_id": "spurs_sarr_29"
+      },
+      {
+        "jersey_number": 21,
+        "name": "Dejan Kulusevski",
+        "position": "CM",
+        "player_id": "spurs_kulusevski_21"
+      },
+      {
+        "jersey_number": 22,
+        "name": "Brennan Johnson",
+        "position": "RW",
+        "player_id": "spurs_johnson_22"
+      },
+      {
+        "jersey_number": 19,
+        "name": "Dominic Solanke",
+        "position": "ST",
+        "player_id": "spurs_solanke_19"
+      },
+      {
+        "jersey_number": 7,
+        "name": "Heung-min Son",
+        "position": "LW",
+        "player_id": "spurs_son_7"
+      }
+    ],
+    "substitutes": [
+      {"jersey_number": 13, "name": "Ben Austin", "position": "GK", "player_id": "spurs_austin_13"},
+      {"jersey_number": 6, "name": "Radu Dragusin", "position": "CB", "player_id": "spurs_dragusin_6"},
+      {"jersey_number": 33, "name": "Japhet Tanganga", "position": "RB", "player_id": "spurs_tanganga_33"},
+      {"jersey_number": 24, "name": "Sergio Reguilon", "position": "LB", "player_id": "spurs_reguilon_24"},
+      {"jersey_number": 11, "name": "Bryan Gil", "position": "LW", "player_id": "spurs_gil_11"},
+      {"jersey_number": 10, "name": "James Maddison", "position": "CAM", "player_id": "spurs_maddison_10"},
+      {"jersey_number": 4, "name": "Oliver Skipp", "position": "CDM", "player_id": "spurs_skipp_4"},
+      {"jersey_number": 16, "name": "Lucas Bergvall", "position": "CM", "player_id": "spurs_bergvall_16"},
+      {"jersey_number": 9, "name": "Timo Werner", "position": "ST", "player_id": "spurs_werner_9"},
+      {"jersey_number": 38, "name": "Will Lankshear", "position": "ST", "player_id": "spurs_lankshear_38"}
+    ]
+  },
+
+  "team_away": {
+    "id": "chelsea",
+    "name": "Chelsea FC",
+    "color_primary": "blue",
+    "color_secondary": "white",
+    "formation": "4-3-3",
+    "players": [
+      {
+        "jersey_number": 1,
+        "name": "Robert Sanchez",
+        "position": "GK",
+        "player_id": "chelsea_sanchez_1"
+      },
+      {
+        "jersey_number": 25,
+        "name": "Moises Caicedo",
+        "position": "RB",
+        "player_id": "chelsea_caicedo_25"
+      },
+      {
+        "jersey_number": 5,
+        "name": "Benoit Badiashile",
+        "position": "CB",
+        "player_id": "chelsea_badiashile_5"
+      },
+      {
+        "jersey_number": 6,
+        "name": "Levi Colwill",
+        "position": "CB",
+        "player_id": "chelsea_colwill_6"
+      },
+      {
+        "jersey_number": 3,
+        "name": "Marc Cucurella",
+        "position": "LB",
+        "player_id": "chelsea_cucurella_3"
+      },
+      {
+        "jersey_number": 45,
+        "name": "Romeo Lavia",
+        "position": "CDM",
+        "player_id": "chelsea_lavia_45"
+      },
+      {
+        "jersey_number": 8,
+        "name": "Enzo Fernandez",
+        "position": "CM",
+        "player_id": "chelsea_fernandez_8"
+      },
+      {
+        "jersey_number": 20,
+        "name": "Cole Palmer",
+        "position": "CAM",
+        "player_id": "chelsea_palmer_20"
+      },
+      {
+        "jersey_number": 7,
+        "name": "Pedro Neto",
+        "position": "RW",
+        "player_id": "chelsea_neto_7"
+      },
+      {
+        "jersey_number": 15,
+        "name": "Nicolas Jackson",
+        "position": "ST",
+        "player_id": "chelsea_jackson_15"
+      },
+      {
+        "jersey_number": 19,
+        "name": "Jadon Sancho",
+        "position": "LW",
+        "player_id": "chelsea_sancho_19"
+      }
+    ]
+  },
+
+  "video_path": "input_videos/spurs_vs_chelsea_dec2024.mp4",
+
+  "known_stats": {
+    "note": "Official stats to validate our analysis against",
+    "goals": [
+      {"minute": 6, "player": "Dominic Solanke", "team": "tottenham"},
+      {"minute": 13, "player": "Dejan Kulusevski", "team": "tottenham"},
+      {"minute": 65, "player": "Jadon Sancho", "team": "chelsea"},
+      {"minute": 74, "player": "Cole Palmer", "team": "chelsea", "type": "penalty"},
+      {"minute": 79, "player": "Cole Palmer", "team": "chelsea", "type": "penalty"},
+      {"minute": 83, "player": "Enzo Fernandez", "team": "chelsea"}
+    ],
+    "final_score": {"tottenham": 3, "chelsea": 4}
+  },
+
+  "processing_options": {
+    "use_gpu": true,
+    "downscale_for_processing": false,
+    "enable_jersey_ocr": true,
+    "jersey_ocr_sample_interval": 30,
+    "detect_camera_cuts": true,
+    "camera_cut_threshold": 0.5,
+    "enable_radar": true,
+    "pitch_model_path": "models/pitch_detection.pt"
+  }
+}

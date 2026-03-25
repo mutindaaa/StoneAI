@@ -1,0 +1,38 @@
+{
+  "_comment": "Minimal config for zero-setup analysis. Copy this and fill in what you know. Everything is optional except sport and video_path.",
+
+  "match_id": "auto",
+  "sport": "soccer",
+  "date": "2026-01-01",
+  "competition": "Match",
+  "venue": "Unknown Venue",
+
+  "unit_system": "imperial",
+
+  "team_home": {
+    "id": "team_a",
+    "name": "Team A",
+    "color_primary": "unknown",
+    "players": []
+  },
+
+  "team_away": {
+    "id": "team_b",
+    "name": "Team B",
+    "color_primary": "unknown",
+    "players": []
+  },
+
+  "video_path": "input_videos/your_game.mp4",
+
+  "processing_options": {
+    "use_gpu": true,
+    "downscale_for_processing": true,
+    "target_processing_height": 720,
+    "model_path": "models/best.pt",
+    "static_camera": false,
+    "visible_field_meters": 68.0,
+    "enable_jersey_ocr": false,
+    "enable_radar": false
+  }
+}

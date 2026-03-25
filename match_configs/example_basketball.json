@@ -1,0 +1,60 @@
+{
+  "match_id": "basketball_test_001",
+  "sport": "basketball",
+  "date": "2026-02-18",
+  "competition": "NBA Africa Demo",
+  "venue": "Demo Arena",
+
+  "team_home": {
+    "id": "team_home",
+    "name": "Home Squad",
+    "color_primary": "red",
+    "color_secondary": "white",
+    "players": [
+      { "jersey_number": 0,  "name": "PG Home",    "position": "PG", "player_id": "home_pg_0"  },
+      { "jersey_number": 1,  "name": "SG Home",    "position": "SG", "player_id": "home_sg_1"  },
+      { "jersey_number": 2,  "name": "SF Home",    "position": "SF", "player_id": "home_sf_2"  },
+      { "jersey_number": 3,  "name": "PF Home",    "position": "PF", "player_id": "home_pf_3"  },
+      { "jersey_number": 4,  "name": "C Home",     "position": "C",  "player_id": "home_c_4"   },
+      { "jersey_number": 5,  "name": "6th Home",   "position": "SG", "player_id": "home_sg_5"  },
+      { "jersey_number": 6,  "name": "7th Home",   "position": "SF", "player_id": "home_sf_6"  },
+      { "jersey_number": 7,  "name": "8th Home",   "position": "PF", "player_id": "home_pf_7"  },
+      { "jersey_number": 8,  "name": "9th Home",   "position": "C",  "player_id": "home_c_8"   },
+      { "jersey_number": 9,  "name": "10th Home",  "position": "PG", "player_id": "home_pg_9"  }
+    ]
+  },
+
+  "team_away": {
+    "id": "team_away",
+    "name": "Away Squad",
+    "color_primary": "blue",
+    "color_secondary": "white",
+    "players": [
+      { "jersey_number": 10, "name": "PG Away",    "position": "PG", "player_id": "away_pg_10" },
+      { "jersey_number": 11, "name": "SG Away",    "position": "SG", "player_id": "away_sg_11" },
+      { "jersey_number": 12, "name": "SF Away",    "position": "SF", "player_id": "away_sf_12" },
+      { "jersey_number": 13, "name": "PF Away",    "position": "PF", "player_id": "away_pf_13" },
+      { "jersey_number": 14, "name": "C Away",     "position": "C",  "player_id": "away_c_14"  },
+      { "jersey_number": 15, "name": "6th Away",   "position": "SG", "player_id": "away_sg_15" },
+      { "jersey_number": 16, "name": "7th Away",   "position": "SF", "player_id": "away_sf_16" },
+      { "jersey_number": 17, "name": "8th Away",   "position": "PF", "player_id": "away_pf_17" },
+      { "jersey_number": 18, "name": "9th Away",   "position": "C",  "player_id": "away_c_18"  },
+      { "jersey_number": 19, "name": "10th Away",  "position": "PG", "player_id": "away_pg_19" }
+    ]
+  },
+
+  "video_path": "input_videos/basketball_test.mp4",
+
+  "processing_options": {
+    "use_gpu": true,
+    "downscale_for_processing": true,
+    "target_processing_height": 720,
+    "enable_jersey_ocr": true,
+    "jersey_ocr_sample_interval": 30,
+    "detect_camera_cuts": true,
+    "camera_cut_threshold": 0.5,
+    "enable_radar": false,
+    "model_path": "models/basketball.pt",
+    "visible_field_meters": 28.65
+  }
+}

@@ -1,0 +1,23 @@
+tracker_type: botsort
+
+# Detection thresholds — raised from defaults to reduce ghost detections / fragmentation
+track_high_thresh: 0.5    # min confidence to initialize a new track (default: 0.25)
+track_low_thresh: 0.1     # min confidence to associate with existing track
+new_track_thresh: 0.6     # min confidence for brand new track (default: 0.25)
+
+# Retention — hold lost tracks for 3 seconds before dropping (90 frames @ 30fps)
+# Prevents re-ID when a player briefly leaves frame during a camera pan (default: 30)
+track_buffer: 90
+
+# Matching
+match_thresh: 0.8         # IOU matching threshold
+fuse_score: True          # fuse detection confidence with IOU distance
+
+# BoT-SORT global motion compensation
+gmc_method: sparseOptFlow
+
+# ReID settings
+proximity_thresh: 0.5
+appearance_thresh: 0.8
+with_reid: False          # disabled — player appearance changes too much under field lighting
+model: auto

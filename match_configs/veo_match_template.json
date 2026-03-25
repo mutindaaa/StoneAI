@@ -1,0 +1,68 @@
+{
+  "match_id": "veo_match_001",
+  "sport": "soccer",
+  "date": "2026-01-01",
+  "competition": "Your League / Cup",
+  "venue": "Your Stadium",
+
+  "team_home": {
+    "id": "team_home",
+    "name": "Home Team",
+    "color_primary": "red",
+    "color_secondary": "white",
+    "players": [
+      { "jersey_number": 1,  "name": "GK",        "position": "GK",  "player_id": "home_gk_1" },
+      { "jersey_number": 2,  "name": "RB",        "position": "RB",  "player_id": "home_rb_2" },
+      { "jersey_number": 3,  "name": "CB Left",   "position": "CB",  "player_id": "home_cb_3" },
+      { "jersey_number": 4,  "name": "CB Right",  "position": "CB",  "player_id": "home_cb_4" },
+      { "jersey_number": 5,  "name": "LB",        "position": "LB",  "player_id": "home_lb_5" },
+      { "jersey_number": 6,  "name": "CDM",       "position": "CDM", "player_id": "home_cdm_6" },
+      { "jersey_number": 7,  "name": "CM Right",  "position": "CM",  "player_id": "home_cm_7" },
+      { "jersey_number": 8,  "name": "CM Left",   "position": "CM",  "player_id": "home_cm_8" },
+      { "jersey_number": 9,  "name": "ST",        "position": "ST",  "player_id": "home_st_9" },
+      { "jersey_number": 10, "name": "RW",        "position": "RW",  "player_id": "home_rw_10" },
+      { "jersey_number": 11, "name": "LW",        "position": "LW",  "player_id": "home_lw_11" }
+    ]
+  },
+
+  "team_away": {
+    "id": "team_away",
+    "name": "Away Team",
+    "color_primary": "blue",
+    "color_secondary": "white",
+    "players": [
+      { "jersey_number": 1,  "name": "GK",        "position": "GK",  "player_id": "away_gk_1" },
+      { "jersey_number": 2,  "name": "RB",        "position": "RB",  "player_id": "away_rb_2" },
+      { "jersey_number": 3,  "name": "CB Left",   "position": "CB",  "player_id": "away_cb_3" },
+      { "jersey_number": 4,  "name": "CB Right",  "position": "CB",  "player_id": "away_cb_4" },
+      { "jersey_number": 5,  "name": "LB",        "position": "LB",  "player_id": "away_lb_5" },
+      { "jersey_number": 6,  "name": "CDM",       "position": "CDM", "player_id": "away_cdm_6" },
+      { "jersey_number": 7,  "name": "CM Right",  "position": "CM",  "player_id": "away_cm_7" },
+      { "jersey_number": 8,  "name": "CM Left",   "position": "CM",  "player_id": "away_cm_8" },
+      { "jersey_number": 9,  "name": "ST",        "position": "ST",  "player_id": "away_st_9" },
+      { "jersey_number": 10, "name": "RW",        "position": "RW",  "player_id": "away_rw_10" },
+      { "jersey_number": 11, "name": "LW",        "position": "LW",  "player_id": "away_lw_11" }
+    ]
+  },
+
+  "video_path": "input_videos/veo_test_5min.mp4",
+
+  "processing_options": {
+    "use_gpu": true,
+
+    "downscale_for_processing": true,
+    "target_processing_height": 720,
+
+    "model_path": "models/best.pt",
+
+    "static_camera": false,
+
+    "visible_field_meters": 68.0,
+
+    "enable_jersey_ocr": true,
+    "jersey_ocr_sample_interval": 60,
+
+    "enable_radar": false,
+    "pitch_model_path": "models/pitch_detection.pt"
+  }
+}

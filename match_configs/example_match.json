@@ -1,0 +1,171 @@
+{
+  "match_id": "test_match_001",
+  "sport": "soccer",
+  "date": "2026-02-16",
+  "competition": "Test Match",
+  "venue": "Test Stadium",
+
+  "team_home": {
+    "id": "team_red",
+    "name": "Red Team",
+    "color_primary": "red",
+    "color_secondary": "white",
+    "players": [
+      {
+        "jersey_number": 1,
+        "name": "Goalkeeper Red",
+        "position": "GK",
+        "player_id": "red_gk_1"
+      },
+      {
+        "jersey_number": 2,
+        "name": "Defender Red 1",
+        "position": "RB",
+        "player_id": "red_rb_2"
+      },
+      {
+        "jersey_number": 3,
+        "name": "Defender Red 2",
+        "position": "CB",
+        "player_id": "red_cb_3"
+      },
+      {
+        "jersey_number": 4,
+        "name": "Defender Red 3",
+        "position": "CB",
+        "player_id": "red_cb_4"
+      },
+      {
+        "jersey_number": 5,
+        "name": "Defender Red 4",
+        "position": "LB",
+        "player_id": "red_lb_5"
+      },
+      {
+        "jersey_number": 6,
+        "name": "Midfielder Red 1",
+        "position": "CDM",
+        "player_id": "red_cdm_6"
+      },
+      {
+        "jersey_number": 7,
+        "name": "Midfielder Red 2",
+        "position": "CM",
+        "player_id": "red_cm_7"
+      },
+      {
+        "jersey_number": 8,
+        "name": "Midfielder Red 3",
+        "position": "CM",
+        "player_id": "red_cm_8"
+      },
+      {
+        "jersey_number": 9,
+        "name": "Forward Red 1",
+        "position": "ST",
+        "player_id": "red_st_9"
+      },
+      {
+        "jersey_number": 10,
+        "name": "Forward Red 2",
+        "position": "RW",
+        "player_id": "red_rw_10"
+      },
+      {
+        "jersey_number": 11,
+        "name": "Forward Red 3",
+        "position": "LW",
+        "player_id": "red_lw_11"
+      }
+    ]
+  },
+
+  "team_away": {
+    "id": "team_blue",
+    "name": "Blue Team",
+    "color_primary": "blue",
+    "color_secondary": "white",
+    "players": [
+      {
+        "jersey_number": 1,
+        "name": "Goalkeeper Blue",
+        "position": "GK",
+        "player_id": "blue_gk_1"
+      },
+      {
+        "jersey_number": 2,
+        "name": "Defender Blue 1",
+        "position": "RB",
+        "player_id": "blue_rb_2"
+      },
+      {
+        "jersey_number": 3,
+        "name": "Defender Blue 2",
+        "position": "CB",
+        "player_id": "blue_cb_3"
+      },
+      {
+        "jersey_number": 4,
+        "name": "Defender Blue 3",
+        "position": "CB",
+        "player_id": "blue_cb_4"
+      },
+      {
+        "jersey_number": 5,
+        "name": "Defender Blue 4",
+        "position": "LB",
+        "player_id": "blue_lb_5"
+      },
+      {
+        "jersey_number": 6,
+        "name": "Midfielder Blue 1",
+        "position": "CDM",
+        "player_id": "blue_cdm_6"
+      },
+      {
+        "jersey_number": 7,
+        "name": "Midfielder Blue 2",
+        "position": "CM",
+        "player_id": "blue_cm_7"
+      },
+      {
+        "jersey_number": 8,
+        "name": "Midfielder Blue 3",
+        "position": "CM",
+        "player_id": "blue_cm_8"
+      },
+      {
+        "jersey_number": 9,
+        "name": "Forward Blue 1",
+        "position": "ST",
+        "player_id": "blue_st_9"
+      },
+      {
+        "jersey_number": 10,
+        "name": "Forward Blue 2",
+        "position": "RW",
+        "player_id": "blue_rw_10"
+      },
+      {
+        "jersey_number": 11,
+        "name": "Forward Blue 3",
+        "position": "LW",
+        "player_id": "blue_lw_11"
+      }
+    ]
+  },
+
+  "video_path": "input_videos/test_30sec.mp4",
+
+  "processing_options": {
+    "use_gpu": true,
+    "downscale_for_processing": true,
+    "target_processing_height": 720,
+    "enable_jersey_ocr": true,
+    "jersey_ocr_sample_interval": 30,
+    "detect_camera_cuts": true,
+    "camera_cut_threshold": 0.5,
+    "enable_radar": true,
+    "pitch_model_path": "models/pitch_detection.pt"
+  }
+}

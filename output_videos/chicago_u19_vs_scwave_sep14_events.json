@@ -1,0 +1,852 @@
+[
+  {
+    "event_id": "evt_0000",
+    "event_type": "pass",
+    "timestamp_sec": 54.67,
+    "frame_number": 1640,
+    "player_id": "chicago_fc_united_unknown_592",
+    "team_id": "chicago_fc_united",
+    "location_x": 449.79,
+    "location_y": 303.52,
+    "metadata": {
+      "from_track": 592,
+      "to_track": 599,
+      "gap_frames": 64
+    }
+  },
+  {
+    "event_id": "evt_0001",
+    "event_type": "possession_change",
+    "timestamp_sec": 58.7,
+    "frame_number": 1761,
+    "player_id": "sc_wave_unknown_609",
+    "team_id": "sc_wave",
+    "location_x": 433.72,
+    "location_y": 309.19,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0002",
+    "event_type": "possession_change",
+    "timestamp_sec": 60.13,
+    "frame_number": 1804,
+    "player_id": "chicago_fc_united_unknown_563",
+    "team_id": "chicago_fc_united",
+    "location_x": 424.99,
+    "location_y": 312.26,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0003",
+    "event_type": "possession_change",
+    "timestamp_sec": 60.53,
+    "frame_number": 1816,
+    "player_id": "sc_wave_unknown_609",
+    "team_id": "sc_wave",
+    "location_x": 423.0,
+    "location_y": 312.97,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0004",
+    "event_type": "possession_change",
+    "timestamp_sec": 67.83,
+    "frame_number": 2035,
+    "player_id": "chicago_fc_united_unknown_729",
+    "team_id": "chicago_fc_united",
+    "location_x": 412.9,
+    "location_y": 316.53,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0005",
+    "event_type": "possession_change",
+    "timestamp_sec": 72.6,
+    "frame_number": 2178,
+    "player_id": "sc_wave_unknown_655",
+    "team_id": "sc_wave",
+    "location_x": 380.75,
+    "location_y": 327.87,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0006",
+    "event_type": "possession_change",
+    "timestamp_sec": 73.03,
+    "frame_number": 2191,
+    "player_id": "chicago_fc_united_unknown_688",
+    "team_id": "chicago_fc_united",
+    "location_x": 365.6,
+    "location_y": 333.21,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0007",
+    "event_type": "possession_change",
+    "timestamp_sec": 73.77,
+    "frame_number": 2213,
+    "player_id": "sc_wave_unknown_733",
+    "team_id": "sc_wave",
+    "location_x": 362.23,
+    "location_y": 334.4,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0008",
+    "event_type": "possession_change",
+    "timestamp_sec": 73.8,
+    "frame_number": 2214,
+    "player_id": "chicago_fc_united_unknown_688",
+    "team_id": "chicago_fc_united",
+    "location_x": 362.08,
+    "location_y": 334.45,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0009",
+    "event_type": "possession_change",
+    "timestamp_sec": 73.83,
+    "frame_number": 2215,
+    "player_id": "sc_wave_unknown_772",
+    "team_id": "sc_wave",
+    "location_x": 361.92,
+    "location_y": 334.51,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0010",
+    "event_type": "possession_change",
+    "timestamp_sec": 74.17,
+    "frame_number": 2225,
+    "player_id": "chicago_fc_united_unknown_769",
+    "team_id": "chicago_fc_united",
+    "location_x": 360.39,
+    "location_y": 335.05,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0011",
+    "event_type": "possession_change",
+    "timestamp_sec": 74.33,
+    "frame_number": 2230,
+    "player_id": "sc_wave_unknown_779",
+    "team_id": "sc_wave",
+    "location_x": 360.24,
+    "location_y": 335.1,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0012",
+    "event_type": "pass",
+    "timestamp_sec": 77.9,
+    "frame_number": 2337,
+    "player_id": "sc_wave_unknown_779",
+    "team_id": "sc_wave",
+    "location_x": 343.09,
+    "location_y": 341.15,
+    "metadata": {
+      "from_track": 779,
+      "to_track": 829,
+      "gap_frames": 64
+    }
+  },
+  {
+    "event_id": "evt_0013",
+    "event_type": "pass",
+    "timestamp_sec": 98.6,
+    "frame_number": 2958,
+    "player_id": "sc_wave_unknown_930",
+    "team_id": "sc_wave",
+    "location_x": 248.03,
+    "location_y": 374.67,
+    "metadata": {
+      "from_track": 930,
+      "to_track": 1100,
+      "gap_frames": 82
+    }
+  },
+  {
+    "event_id": "evt_0014",
+    "event_type": "possession_change",
+    "timestamp_sec": 105.3,
+    "frame_number": 3159,
+    "player_id": "chicago_fc_united_unknown_1224",
+    "team_id": "chicago_fc_united",
+    "location_x": 217.34,
+    "location_y": 360.9,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0015",
+    "event_type": "possession_change",
+    "timestamp_sec": 105.37,
+    "frame_number": 3161,
+    "player_id": "sc_wave_unknown_1100",
+    "team_id": "sc_wave",
+    "location_x": 217.03,
+    "location_y": 360.69,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0016",
+    "event_type": "possession_change",
+    "timestamp_sec": 105.53,
+    "frame_number": 3166,
+    "player_id": "chicago_fc_united_unknown_1224",
+    "team_id": "chicago_fc_united",
+    "location_x": 216.26,
+    "location_y": 360.18,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0017",
+    "event_type": "possession_change",
+    "timestamp_sec": 105.57,
+    "frame_number": 3167,
+    "player_id": "sc_wave_unknown_1100",
+    "team_id": "sc_wave",
+    "location_x": 216.11,
+    "location_y": 360.08,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0018",
+    "event_type": "possession_change",
+    "timestamp_sec": 105.7,
+    "frame_number": 3171,
+    "player_id": "chicago_fc_united_unknown_1224",
+    "team_id": "chicago_fc_united",
+    "location_x": 215.49,
+    "location_y": 359.68,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0019",
+    "event_type": "possession_change",
+    "timestamp_sec": 105.77,
+    "frame_number": 3173,
+    "player_id": "sc_wave_unknown_1100",
+    "team_id": "sc_wave",
+    "location_x": 215.19,
+    "location_y": 359.47,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0020",
+    "event_type": "pass",
+    "timestamp_sec": 106.3,
+    "frame_number": 3189,
+    "player_id": "sc_wave_unknown_1100",
+    "team_id": "sc_wave",
+    "location_x": 212.58,
+    "location_y": 357.75,
+    "metadata": {
+      "from_track": 1100,
+      "to_track": 1208,
+      "gap_frames": 29
+    }
+  },
+  {
+    "event_id": "evt_0021",
+    "event_type": "possession_change",
+    "timestamp_sec": 108.23,
+    "frame_number": 3247,
+    "player_id": "chicago_fc_united_unknown_1245",
+    "team_id": "chicago_fc_united",
+    "location_x": 203.98,
+    "location_y": 352.06,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0022",
+    "event_type": "possession_change",
+    "timestamp_sec": 110.37,
+    "frame_number": 3311,
+    "player_id": "sc_wave_unknown_1183",
+    "team_id": "sc_wave",
+    "location_x": 200.6,
+    "location_y": 349.83,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0023",
+    "event_type": "pass",
+    "timestamp_sec": 111.4,
+    "frame_number": 3342,
+    "player_id": "sc_wave_unknown_1183",
+    "team_id": "sc_wave",
+    "location_x": 189.08,
+    "location_y": 342.21,
+    "metadata": {
+      "from_track": 1183,
+      "to_track": 1335,
+      "gap_frames": 53
+    }
+  },
+  {
+    "event_id": "evt_0024",
+    "event_type": "possession_change",
+    "timestamp_sec": 117.07,
+    "frame_number": 3512,
+    "player_id": "chicago_fc_united_unknown_1508",
+    "team_id": "chicago_fc_united",
+    "location_x": 163.13,
+    "location_y": 325.05,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0025",
+    "event_type": "possession_change",
+    "timestamp_sec": 117.43,
+    "frame_number": 3523,
+    "player_id": "sc_wave_unknown_1499",
+    "team_id": "sc_wave",
+    "location_x": 161.44,
+    "location_y": 323.94,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0026",
+    "event_type": "possession_change",
+    "timestamp_sec": 117.47,
+    "frame_number": 3524,
+    "player_id": "chicago_fc_united_unknown_1508",
+    "team_id": "chicago_fc_united",
+    "location_x": 161.28,
+    "location_y": 323.83,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0027",
+    "event_type": "possession_change",
+    "timestamp_sec": 119.43,
+    "frame_number": 3583,
+    "player_id": "sc_wave_unknown_1499",
+    "team_id": "sc_wave",
+    "location_x": 152.22,
+    "location_y": 317.84,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0028",
+    "event_type": "pass",
+    "timestamp_sec": 125.97,
+    "frame_number": 3779,
+    "player_id": "sc_wave_unknown_1533",
+    "team_id": "sc_wave",
+    "location_x": 121.97,
+    "location_y": 297.84,
+    "metadata": {
+      "from_track": 1533,
+      "to_track": 1555,
+      "gap_frames": 27
+    }
+  },
+  {
+    "event_id": "evt_0029",
+    "event_type": "possession_change",
+    "timestamp_sec": 130.17,
+    "frame_number": 3905,
+    "player_id": "chicago_fc_united_unknown_1563",
+    "team_id": "chicago_fc_united",
+    "location_x": 113.22,
+    "location_y": 292.05,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0030",
+    "event_type": "possession_change",
+    "timestamp_sec": 154.67,
+    "frame_number": 4640,
+    "player_id": "sc_wave_unknown_2064",
+    "team_id": "sc_wave",
+    "location_x": 42.47,
+    "location_y": 243.05,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0031",
+    "event_type": "possession_change",
+    "timestamp_sec": 163.8,
+    "frame_number": 4914,
+    "player_id": "chicago_fc_united_unknown_2119",
+    "team_id": "chicago_fc_united",
+    "location_x": 37.52,
+    "location_y": 243.23,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0032",
+    "event_type": "possession_change",
+    "timestamp_sec": 169.5,
+    "frame_number": 5085,
+    "player_id": "sc_wave_unknown_2276",
+    "team_id": "sc_wave",
+    "location_x": 161.31,
+    "location_y": 265.37,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0033",
+    "event_type": "possession_change",
+    "timestamp_sec": 213.77,
+    "frame_number": 6413,
+    "player_id": "chicago_fc_united_unknown_2806",
+    "team_id": "chicago_fc_united",
+    "location_x": 510.49,
+    "location_y": 307.94,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0034",
+    "event_type": "possession_change",
+    "timestamp_sec": 216.0,
+    "frame_number": 6480,
+    "player_id": "sc_wave_unknown_2813",
+    "team_id": "sc_wave",
+    "location_x": 363.29,
+    "location_y": 298.2,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0035",
+    "event_type": "possession_change",
+    "timestamp_sec": 216.03,
+    "frame_number": 6481,
+    "player_id": "chicago_fc_united_unknown_2806",
+    "team_id": "chicago_fc_united",
+    "location_x": 364.09,
+    "location_y": 298.33,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0036",
+    "event_type": "pass",
+    "timestamp_sec": 216.07,
+    "frame_number": 6482,
+    "player_id": "chicago_fc_united_unknown_2806",
+    "team_id": "chicago_fc_united",
+    "location_x": 365.7,
+    "location_y": 298.59,
+    "metadata": {
+      "from_track": 2806,
+      "to_track": 2960,
+      "gap_frames": 22
+    }
+  },
+  {
+    "event_id": "evt_0037",
+    "event_type": "pass",
+    "timestamp_sec": 216.8,
+    "frame_number": 6504,
+    "player_id": "chicago_fc_united_unknown_2960",
+    "team_id": "chicago_fc_united",
+    "location_x": 383.43,
+    "location_y": 301.42,
+    "metadata": {
+      "from_track": 2960,
+      "to_track": 2861,
+      "gap_frames": 52
+    }
+  },
+  {
+    "event_id": "evt_0038",
+    "event_type": "possession_change",
+    "timestamp_sec": 219.07,
+    "frame_number": 6572,
+    "player_id": "sc_wave_unknown_2930",
+    "team_id": "sc_wave",
+    "location_x": 437.4,
+    "location_y": 310.02,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0039",
+    "event_type": "possession_change",
+    "timestamp_sec": 219.97,
+    "frame_number": 6599,
+    "player_id": "chicago_fc_united_unknown_2956",
+    "team_id": "chicago_fc_united",
+    "location_x": 459.15,
+    "location_y": 313.49,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0040",
+    "event_type": "possession_change",
+    "timestamp_sec": 220.2,
+    "frame_number": 6606,
+    "player_id": "sc_wave_unknown_2987",
+    "team_id": "sc_wave",
+    "location_x": 464.79,
+    "location_y": 314.39,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0041",
+    "event_type": "possession_change",
+    "timestamp_sec": 220.83,
+    "frame_number": 6625,
+    "player_id": "chicago_fc_united_unknown_2992",
+    "team_id": "chicago_fc_united",
+    "location_x": 479.29,
+    "location_y": 316.7,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0042",
+    "event_type": "possession_change",
+    "timestamp_sec": 221.33,
+    "frame_number": 6640,
+    "player_id": "sc_wave_unknown_3019",
+    "team_id": "sc_wave",
+    "location_x": 488.96,
+    "location_y": 318.25,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0043",
+    "event_type": "pass",
+    "timestamp_sec": 221.73,
+    "frame_number": 6652,
+    "player_id": "sc_wave_unknown_3019",
+    "team_id": "sc_wave",
+    "location_x": 502.65,
+    "location_y": 320.43,
+    "metadata": {
+      "from_track": 3019,
+      "to_track": 3049,
+      "gap_frames": 92
+    }
+  },
+  {
+    "event_id": "evt_0044",
+    "event_type": "possession_change",
+    "timestamp_sec": 225.7,
+    "frame_number": 6771,
+    "player_id": "chicago_fc_united_unknown_3062",
+    "team_id": "chicago_fc_united",
+    "location_x": 580.79,
+    "location_y": 332.89,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0045",
+    "event_type": "possession_change",
+    "timestamp_sec": 227.0,
+    "frame_number": 6810,
+    "player_id": "sc_wave_unknown_2859",
+    "team_id": "sc_wave",
+    "location_x": 629.13,
+    "location_y": 340.6,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0046",
+    "event_type": "possession_change",
+    "timestamp_sec": 227.4,
+    "frame_number": 6822,
+    "player_id": "chicago_fc_united_unknown_3106",
+    "team_id": "chicago_fc_united",
+    "location_x": 638.79,
+    "location_y": 342.14,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0047",
+    "event_type": "possession_change",
+    "timestamp_sec": 228.1,
+    "frame_number": 6843,
+    "player_id": "sc_wave_unknown_3113",
+    "team_id": "sc_wave",
+    "location_x": 655.71,
+    "location_y": 344.84,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0048",
+    "event_type": "possession_change",
+    "timestamp_sec": 228.13,
+    "frame_number": 6844,
+    "player_id": "chicago_fc_united_unknown_3083",
+    "team_id": "chicago_fc_united",
+    "location_x": 656.51,
+    "location_y": 344.97,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0049",
+    "event_type": "possession_change",
+    "timestamp_sec": 228.27,
+    "frame_number": 6848,
+    "player_id": "sc_wave_unknown_2859",
+    "team_id": "sc_wave",
+    "location_x": 659.74,
+    "location_y": 345.48,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0050",
+    "event_type": "possession_change",
+    "timestamp_sec": 228.3,
+    "frame_number": 6849,
+    "player_id": "chicago_fc_united_unknown_3062",
+    "team_id": "chicago_fc_united",
+    "location_x": 660.54,
+    "location_y": 345.61,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0051",
+    "event_type": "possession_change",
+    "timestamp_sec": 230.0,
+    "frame_number": 6900,
+    "player_id": "sc_wave_unknown_2859",
+    "team_id": "sc_wave",
+    "location_x": 697.28,
+    "location_y": 353.21,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0052",
+    "event_type": "possession_change",
+    "timestamp_sec": 231.3,
+    "frame_number": 6939,
+    "player_id": "chicago_fc_united_unknown_3109",
+    "team_id": "chicago_fc_united",
+    "location_x": 675.34,
+    "location_y": 362.51,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0053",
+    "event_type": "possession_change",
+    "timestamp_sec": 232.43,
+    "frame_number": 6973,
+    "player_id": "sc_wave_unknown_3095",
+    "team_id": "sc_wave",
+    "location_x": 668.03,
+    "location_y": 365.6,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0054",
+    "event_type": "possession_change",
+    "timestamp_sec": 233.43,
+    "frame_number": 7003,
+    "player_id": "chicago_fc_united_unknown_3297",
+    "team_id": "chicago_fc_united",
+    "location_x": 644.97,
+    "location_y": 375.38,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0055",
+    "event_type": "possession_change",
+    "timestamp_sec": 244.87,
+    "frame_number": 7346,
+    "player_id": "sc_wave_unknown_3343",
+    "team_id": "sc_wave",
+    "location_x": 416.19,
+    "location_y": 383.85,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0056",
+    "event_type": "possession_change",
+    "timestamp_sec": 244.93,
+    "frame_number": 7348,
+    "player_id": "chicago_fc_united_unknown_3359",
+    "team_id": "chicago_fc_united",
+    "location_x": 414.14,
+    "location_y": 382.57,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  },
+  {
+    "event_id": "evt_0057",
+    "event_type": "pass",
+    "timestamp_sec": 245.37,
+    "frame_number": 7361,
+    "player_id": "chicago_fc_united_unknown_3359",
+    "team_id": "chicago_fc_united",
+    "location_x": 399.82,
+    "location_y": 373.6,
+    "metadata": {
+      "from_track": 3359,
+      "to_track": 3420,
+      "gap_frames": 98
+    }
+  },
+  {
+    "event_id": "evt_0058",
+    "event_type": "possession_change",
+    "timestamp_sec": 251.8,
+    "frame_number": 7554,
+    "player_id": "sc_wave_unknown_3507",
+    "team_id": "sc_wave",
+    "location_x": 276.06,
+    "location_y": 296.08,
+    "metadata": {
+      "from_team": 1,
+      "to_team": 2
+    }
+  },
+  {
+    "event_id": "evt_0059",
+    "event_type": "possession_change",
+    "timestamp_sec": 252.83,
+    "frame_number": 7585,
+    "player_id": "chicago_fc_united_unknown_3534",
+    "team_id": "chicago_fc_united",
+    "location_x": 189.13,
+    "location_y": 241.74,
+    "metadata": {
+      "from_team": 2,
+      "to_team": 1
+    }
+  }
+]

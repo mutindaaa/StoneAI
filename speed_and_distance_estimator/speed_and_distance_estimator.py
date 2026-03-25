@@ -1,12 +1,15 @@
 import cv2
-import sys 
+import sys
 sys.path.append('../')
 from utils import measure_distance ,get_foot_position
 
+MAX_REALISTIC_SPEED_KMH = 38.0  # Discard windows above this — tracking noise, not real speed
+
 class SpeedAndDistance_Estimator():
-    def __init__(self):
+    def __init__(self, frame_rate=24, unit_system='metric'):
         self.frame_window=5
-        self.frame_rate=24
+        self.frame_rate=frame_rate  # Use actual video FPS for accurate calculations
+        self.unit_system = unit_system  # 'metric' (km/h, m) or 'imperial' (mph, yd)
     
     def add_speed_and_distance_to_tracks(self,tracks):
         total_distance= {}
@@ -30,8 +33,14 @@ class SpeedAndDistance_Estimator():
                     
                     distance_covered = measure_distance(start_position,end_position)
                     time_elapsed = (last_frame-frame_num)/self.frame_rate
+                    if time_elapsed <= 0:
+                        continue
                     speed_meteres_per_second = distance_covered/time_elapsed
                     speed_km_per_hour = speed_meteres_per_second*3.6
+
+                    # Discard windows with impossible speed — tracking/detection noise
+                    if speed_km_per_hour > MAX_REALISTIC_SPEED_KMH:
+                        continue
 
                     if object not in total_distance:
                         total_distance[object]= {}
@@ -47,27 +56,60 @@ class SpeedAndDistance_Estimator():
                         tracks[object][frame_num_batch][track_id]['speed'] = speed_km_per_hour
                         tracks[object][frame_num_batch][track_id]['distance'] = total_distance[object][track_id]
     
-    def draw_speed_and_distance(self,frames,tracks):
+    def _format_speed_dist(self, speed_kmh, dist_m):
+        """Convert speed/distance to display units based on unit_system."""
+        if self.unit_system == 'imperial':
+            return f"{speed_kmh * 0.62137:.1f}mph", f"{dist_m * 1.09361:.1f}yd"
+        return f"{speed_kmh:.1f}km/h", f"{dist_m:.1f}m"
+
+    def annotate_frame(self, frame, frame_num, tracks):
+        """Add speed/distance text to a single frame — streaming-friendly."""
+        for object, object_tracks in tracks.items():
+            if object in ("ball", "referees"):
+                continue
+            if frame_num >= len(object_tracks):
+                continue
+            for _, track_info in object_tracks[frame_num].items():
+                speed    = track_info.get("speed")
+                distance = track_info.get("distance")
+                if speed is None or distance is None:
+                    continue
+                bbox     = track_info["bbox"]
+                position = list(get_foot_position(bbox))
+                position[1] += 35
+                position = tuple(map(int, position))
+                spd_txt, dist_txt = self._format_speed_dist(speed, distance)
+                cv2.putText(frame, spd_txt, position,
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255,255,255), 2)
+                cv2.putText(frame, spd_txt, position,
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0,0,0), 1)
+                cv2.putText(frame, dist_txt, (position[0], position[1]+16),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255,255,255), 2)
+                cv2.putText(frame, dist_txt, (position[0], position[1]+16),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0,0,0), 1)
+        return frame
+
+    def draw_speed_and_distance(self, frames, tracks):
         output_frames = []
         for frame_num, frame in enumerate(frames):
             for object, object_tracks in tracks.items():
                 if object == "ball" or object == "referees":
-                    continue 
+                    continue
                 for _, track_info in object_tracks[frame_num].items():
-                   if "speed" in track_info:
-                       speed = track_info.get('speed',None)
-                       distance = track_info.get('distance',None)
-                       if speed is None or distance is None:
-                           continue
-                       
-                       bbox = track_info['bbox']
-                       position = get_foot_position(bbox)
-                       position = list(position)
-                       position[1]+=40
-
-                       position = tuple(map(int,position))
-                       cv2.putText(frame, f"{speed:.2f} km/h",position,cv2.FONT_HERSHEY_SIMPLEX,0.5,(0,0,0),2)
-                       cv2.putText(frame, f"{distance:.2f} m",(position[0],position[1]+20),cv2.FONT_HERSHEY_SIMPLEX,0.5,(0,0,0),2)
+                    if "speed" in track_info:
+                        speed = track_info.get('speed')
+                        distance = track_info.get('distance')
+                        if speed is None or distance is None:
+                            continue
+                        bbox = track_info['bbox']
+                        position = list(get_foot_position(bbox))
+                        position[1] += 35
+                        position = tuple(map(int, position))
+                        spd_txt, dist_txt = self._format_speed_dist(speed, distance)
+                        cv2.putText(frame, spd_txt, position, cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255,255,255), 2)
+                        cv2.putText(frame, spd_txt, position, cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0,0,0), 1)
+                        cv2.putText(frame, dist_txt, (position[0], position[1]+16), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255,255,255), 2)
+                        cv2.putText(frame, dist_txt, (position[0], position[1]+16), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0,0,0), 1)
             output_frames.append(frame)
-        
+
         return output_frames

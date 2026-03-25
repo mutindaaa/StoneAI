@@ -1,0 +1,3213 @@
+{
+  "tottenham_unknown_4120": {
+    "player_name": "tottenham_unknown_4120",
+    "team_id": "unknown",
+    "minutes_played": 0.25,
+    "distance_covered_m": 40.42,
+    "top_speed_kmh": 37.99,
+    "avg_speed_kmh": 9.86,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4121": {
+    "player_name": "tottenham_unknown_4121",
+    "team_id": "unknown",
+    "minutes_played": 0.13,
+    "distance_covered_m": 10.17,
+    "top_speed_kmh": 27.44,
+    "avg_speed_kmh": 4.85,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4129": {
+    "player_name": "tottenham_unknown_4129",
+    "team_id": "unknown",
+    "minutes_played": 0.09,
+    "distance_covered_m": 3.76,
+    "top_speed_kmh": 6.65,
+    "avg_speed_kmh": 2.52,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.8620689655172413,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2101": {
+    "player_name": "tottenham_unknown_2101",
+    "team_id": "unknown",
+    "minutes_played": 0.29,
+    "distance_covered_m": 46.16,
+    "top_speed_kmh": 33.45,
+    "avg_speed_kmh": 9.6,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.2413793103448276,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2105": {
+    "player_name": "chelsea_unknown_2105",
+    "team_id": "unknown",
+    "minutes_played": 0.31,
+    "distance_covered_m": 42.11,
+    "top_speed_kmh": 33.01,
+    "avg_speed_kmh": 8.14,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.27586206896551724,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2102": {
+    "player_name": "tottenham_unknown_2102",
+    "team_id": "unknown",
+    "minutes_played": 0.2,
+    "distance_covered_m": 37.97,
+    "top_speed_kmh": 35.62,
+    "avg_speed_kmh": 11.45,
+    "sprints_count": 1,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2107": {
+    "player_name": "tottenham_unknown_2107",
+    "team_id": "unknown",
+    "minutes_played": 0.15,
+    "distance_covered_m": 24.31,
+    "top_speed_kmh": 36.77,
+    "avg_speed_kmh": 10.03,
+    "sprints_count": 1,
+    "sport_metrics": {
+      "possession_time_sec": 0.10344827586206896,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2110": {
+    "player_name": "tottenham_unknown_2110",
+    "team_id": "unknown",
+    "minutes_played": 0.16,
+    "distance_covered_m": 25.65,
+    "top_speed_kmh": 34.55,
+    "avg_speed_kmh": 9.88,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.6206896551724138,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2114": {
+    "player_name": "tottenham_unknown_2114",
+    "team_id": "unknown",
+    "minutes_played": 0.19,
+    "distance_covered_m": 41.26,
+    "top_speed_kmh": 35.14,
+    "avg_speed_kmh": 13.01,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.1724137931034483,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_92": {
+    "player_name": "tottenham_unknown_92",
+    "team_id": "unknown",
+    "minutes_played": 0.21,
+    "distance_covered_m": 28.91,
+    "top_speed_kmh": 31.32,
+    "avg_speed_kmh": 8.25,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.06896551724137931,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_93": {
+    "player_name": "tottenham_unknown_93",
+    "team_id": "unknown",
+    "minutes_played": 0.21,
+    "distance_covered_m": 20.34,
+    "top_speed_kmh": 19.57,
+    "avg_speed_kmh": 5.8,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_94": {
+    "player_name": "chelsea_unknown_94",
+    "team_id": "unknown",
+    "minutes_played": 0.12,
+    "distance_covered_m": 9.86,
+    "top_speed_kmh": 18.46,
+    "avg_speed_kmh": 4.79,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.2413793103448276,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_95": {
+    "player_name": "tottenham_unknown_95",
+    "team_id": "unknown",
+    "minutes_played": 0.19,
+    "distance_covered_m": 23.64,
+    "top_speed_kmh": 24.83,
+    "avg_speed_kmh": 7.37,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.896551724137931,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_96": {
+    "player_name": "chelsea_unknown_96",
+    "team_id": "unknown",
+    "minutes_played": 0.13,
+    "distance_covered_m": 8.36,
+    "top_speed_kmh": 12.03,
+    "avg_speed_kmh": 3.93,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 1.1379310344827587,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_97": {
+    "player_name": "tottenham_unknown_97",
+    "team_id": "unknown",
+    "minutes_played": 0.21,
+    "distance_covered_m": 25.58,
+    "top_speed_kmh": 36.72,
+    "avg_speed_kmh": 7.3,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.034482758620689655,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_98": {
+    "player_name": "tottenham_unknown_98",
+    "team_id": "unknown",
+    "minutes_played": 0.09,
+    "distance_covered_m": 2.38,
+    "top_speed_kmh": 6.65,
+    "avg_speed_kmh": 1.55,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_100": {
+    "player_name": "chelsea_unknown_100",
+    "team_id": "unknown",
+    "minutes_played": 0.14,
+    "distance_covered_m": 13.44,
+    "top_speed_kmh": 22.34,
+    "avg_speed_kmh": 5.32,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_101": {
+    "player_name": "tottenham_unknown_101",
+    "team_id": "unknown",
+    "minutes_played": 0.16,
+    "distance_covered_m": 11.12,
+    "top_speed_kmh": 21.88,
+    "avg_speed_kmh": 3.94,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_103": {
+    "player_name": "tottenham_unknown_103",
+    "team_id": "unknown",
+    "minutes_played": 0.17,
+    "distance_covered_m": 15.14,
+    "top_speed_kmh": 33.04,
+    "avg_speed_kmh": 5.03,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_104": {
+    "player_name": "tottenham_unknown_104",
+    "team_id": "unknown",
+    "minutes_played": 0.1,
+    "distance_covered_m": 8.74,
+    "top_speed_kmh": 21.04,
+    "avg_speed_kmh": 4.75,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2144": {
+    "player_name": "chelsea_unknown_2144",
+    "team_id": "unknown",
+    "minutes_played": 0.13,
+    "distance_covered_m": 19.19,
+    "top_speed_kmh": 32.65,
+    "avg_speed_kmh": 9.11,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 3.1379310344827585,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2146": {
+    "player_name": "chelsea_unknown_2146",
+    "team_id": "unknown",
+    "minutes_played": 0.21,
+    "distance_covered_m": 30.22,
+    "top_speed_kmh": 29.76,
+    "avg_speed_kmh": 8.55,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.13793103448275862,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_129": {
+    "player_name": "tottenham_unknown_129",
+    "team_id": "unknown",
+    "minutes_played": 0.16,
+    "distance_covered_m": 26.19,
+    "top_speed_kmh": 34.33,
+    "avg_speed_kmh": 9.9,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2184": {
+    "player_name": "chelsea_unknown_2184",
+    "team_id": "unknown",
+    "minutes_played": 0.16,
+    "distance_covered_m": 24.1,
+    "top_speed_kmh": 36.4,
+    "avg_speed_kmh": 9.29,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.06896551724137931,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_144": {
+    "player_name": "tottenham_unknown_144",
+    "team_id": "unknown",
+    "minutes_played": 0.13,
+    "distance_covered_m": 32.28,
+    "top_speed_kmh": 37.43,
+    "avg_speed_kmh": 15.32,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.6551724137931034,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2194": {
+    "player_name": "chelsea_unknown_2194",
+    "team_id": "unknown",
+    "minutes_played": 0.12,
+    "distance_covered_m": 16.78,
+    "top_speed_kmh": 31.78,
+    "avg_speed_kmh": 8.26,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_149": {
+    "player_name": "tottenham_unknown_149",
+    "team_id": "unknown",
+    "minutes_played": 0.11,
+    "distance_covered_m": 16.15,
+    "top_speed_kmh": 27.9,
+    "avg_speed_kmh": 8.44,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4100": {
+    "player_name": "tottenham_unknown_4100",
+    "team_id": "unknown",
+    "minutes_played": 0.28,
+    "distance_covered_m": 41.73,
+    "top_speed_kmh": 31.32,
+    "avg_speed_kmh": 8.93,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 1.5517241379310345,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_151": {
+    "player_name": "tottenham_unknown_151",
+    "team_id": "unknown",
+    "minutes_played": 0.11,
+    "distance_covered_m": 21.44,
+    "top_speed_kmh": 33.87,
+    "avg_speed_kmh": 11.45,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.034482758620689655,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_156": {
+    "player_name": "chelsea_unknown_156",
+    "team_id": "unknown",
+    "minutes_played": 0.09,
+    "distance_covered_m": 16.82,
+    "top_speed_kmh": 29.13,
+    "avg_speed_kmh": 10.15,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.06896551724137931,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2208": {
+    "player_name": "chelsea_unknown_2208",
+    "team_id": "unknown",
+    "minutes_played": 0.2,
+    "distance_covered_m": 26.7,
+    "top_speed_kmh": 28.98,
+    "avg_speed_kmh": 7.99,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 2.9310344827586206,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_181": {
+    "player_name": "tottenham_unknown_181",
+    "team_id": "unknown",
+    "minutes_played": 0.09,
+    "distance_covered_m": 16.74,
+    "top_speed_kmh": 26.9,
+    "avg_speed_kmh": 10.43,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2235": {
+    "player_name": "tottenham_unknown_2235",
+    "team_id": "unknown",
+    "minutes_played": 0.22,
+    "distance_covered_m": 36.56,
+    "top_speed_kmh": 20.26,
+    "avg_speed_kmh": 9.79,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.10344827586206896,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4306": {
+    "player_name": "tottenham_unknown_4306",
+    "team_id": "unknown",
+    "minutes_played": 0.22,
+    "distance_covered_m": 33.46,
+    "top_speed_kmh": 36.54,
+    "avg_speed_kmh": 8.96,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 1.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_219": {
+    "player_name": "tottenham_unknown_219",
+    "team_id": "unknown",
+    "minutes_played": 0.1,
+    "distance_covered_m": 17.76,
+    "top_speed_kmh": 30.32,
+    "avg_speed_kmh": 10.78,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2266": {
+    "player_name": "chelsea_unknown_2266",
+    "team_id": "unknown",
+    "minutes_played": 0.16,
+    "distance_covered_m": 17.46,
+    "top_speed_kmh": 22.18,
+    "avg_speed_kmh": 6.57,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.27586206896551724,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2269": {
+    "player_name": "tottenham_unknown_2269",
+    "team_id": "unknown",
+    "minutes_played": 0.13,
+    "distance_covered_m": 20.02,
+    "top_speed_kmh": 21.04,
+    "avg_speed_kmh": 9.32,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 3.689655172413793,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2285": {
+    "player_name": "chelsea_unknown_2285",
+    "team_id": "unknown",
+    "minutes_played": 0.14,
+    "distance_covered_m": 21.38,
+    "top_speed_kmh": 24.93,
+    "avg_speed_kmh": 8.88,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 1.8275862068965518,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4346": {
+    "player_name": "tottenham_unknown_4346",
+    "team_id": "unknown",
+    "minutes_played": 0.18,
+    "distance_covered_m": 31.06,
+    "top_speed_kmh": 37.87,
+    "avg_speed_kmh": 10.16,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.27586206896551724,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4347": {
+    "player_name": "chelsea_unknown_4347",
+    "team_id": "unknown",
+    "minutes_played": 0.11,
+    "distance_covered_m": 21.06,
+    "top_speed_kmh": 33.45,
+    "avg_speed_kmh": 11.59,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4352": {
+    "player_name": "chelsea_unknown_4352",
+    "team_id": "unknown",
+    "minutes_played": 0.16,
+    "distance_covered_m": 24.93,
+    "top_speed_kmh": 36.36,
+    "avg_speed_kmh": 9.4,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4351": {
+    "player_name": "chelsea_unknown_4351",
+    "team_id": "unknown",
+    "minutes_played": 0.2,
+    "distance_covered_m": 45.83,
+    "top_speed_kmh": 37.87,
+    "avg_speed_kmh": 13.83,
+    "sprints_count": 1,
+    "sport_metrics": {
+      "possession_time_sec": 0.3448275862068966,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4350": {
+    "player_name": "tottenham_unknown_4350",
+    "team_id": "unknown",
+    "minutes_played": 0.26,
+    "distance_covered_m": 51.35,
+    "top_speed_kmh": 37.14,
+    "avg_speed_kmh": 11.94,
+    "sprints_count": 1,
+    "sport_metrics": {
+      "possession_time_sec": 0.4827586206896552,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4354": {
+    "player_name": "tottenham_unknown_4354",
+    "team_id": "unknown",
+    "minutes_played": 0.19,
+    "distance_covered_m": 43.14,
+    "top_speed_kmh": 37.34,
+    "avg_speed_kmh": 13.86,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 2.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4356": {
+    "player_name": "tottenham_unknown_4356",
+    "team_id": "unknown",
+    "minutes_played": 0.17,
+    "distance_covered_m": 24.42,
+    "top_speed_kmh": 37.87,
+    "avg_speed_kmh": 8.69,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.6551724137931034,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2321": {
+    "player_name": "chelsea_unknown_2321",
+    "team_id": "unknown",
+    "minutes_played": 0.11,
+    "distance_covered_m": 23.19,
+    "top_speed_kmh": 26.23,
+    "avg_speed_kmh": 12.34,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.034482758620689655,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4380": {
+    "player_name": "tottenham_unknown_4380",
+    "team_id": "unknown",
+    "minutes_played": 0.1,
+    "distance_covered_m": 14.61,
+    "top_speed_kmh": 37.01,
+    "avg_speed_kmh": 8.38,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 1.5862068965517242,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4415": {
+    "player_name": "chelsea_unknown_4415",
+    "team_id": "unknown",
+    "minutes_played": 0.13,
+    "distance_covered_m": 31.51,
+    "top_speed_kmh": 36.54,
+    "avg_speed_kmh": 14.18,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.034482758620689655,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4417": {
+    "player_name": "chelsea_unknown_4417",
+    "team_id": "unknown",
+    "minutes_played": 0.42,
+    "distance_covered_m": 71.12,
+    "top_speed_kmh": 35.84,
+    "avg_speed_kmh": 10.23,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2371": {
+    "player_name": "chelsea_unknown_2371",
+    "team_id": "unknown",
+    "minutes_played": 0.09,
+    "distance_covered_m": 12.02,
+    "top_speed_kmh": 22.18,
+    "avg_speed_kmh": 8.42,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.3793103448275862,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2100": {
+    "player_name": "tottenham_unknown_2100",
+    "team_id": "unknown",
+    "minutes_played": 0.26,
+    "distance_covered_m": 46.51,
+    "top_speed_kmh": 36.75,
+    "avg_speed_kmh": 10.86,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.7931034482758621,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4432": {
+    "player_name": "chelsea_unknown_4432",
+    "team_id": "unknown",
+    "minutes_played": 0.11,
+    "distance_covered_m": 14.95,
+    "top_speed_kmh": 34.16,
+    "avg_speed_kmh": 7.29,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.20689655172413793,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4461": {
+    "player_name": "tottenham_unknown_4461",
+    "team_id": "unknown",
+    "minutes_played": 0.42,
+    "distance_covered_m": 72.96,
+    "top_speed_kmh": 35.33,
+    "avg_speed_kmh": 10.45,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.27586206896551724,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4492": {
+    "player_name": "chelsea_unknown_4492",
+    "team_id": "unknown",
+    "minutes_played": 0.41,
+    "distance_covered_m": 73.32,
+    "top_speed_kmh": 31.56,
+    "avg_speed_kmh": 10.77,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 2.8275862068965516,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4509": {
+    "player_name": "tottenham_unknown_4509",
+    "team_id": "unknown",
+    "minutes_played": 0.19,
+    "distance_covered_m": 32.96,
+    "top_speed_kmh": 25.71,
+    "avg_speed_kmh": 10.54,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4511": {
+    "player_name": "tottenham_unknown_4511",
+    "team_id": "unknown",
+    "minutes_played": 0.37,
+    "distance_covered_m": 67.97,
+    "top_speed_kmh": 35.62,
+    "avg_speed_kmh": 10.93,
+    "sprints_count": 1,
+    "sport_metrics": {
+      "possession_time_sec": 0.5862068965517241,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4514": {
+    "player_name": "tottenham_unknown_4514",
+    "team_id": "unknown",
+    "minutes_played": 0.4,
+    "distance_covered_m": 64.94,
+    "top_speed_kmh": 31.99,
+    "avg_speed_kmh": 9.78,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4520": {
+    "player_name": "tottenham_unknown_4520",
+    "team_id": "unknown",
+    "minutes_played": 0.27,
+    "distance_covered_m": 52.79,
+    "top_speed_kmh": 33.93,
+    "avg_speed_kmh": 11.42,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 5.275862068965517,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4523": {
+    "player_name": "tottenham_unknown_4523",
+    "team_id": "unknown",
+    "minutes_played": 0.23,
+    "distance_covered_m": 38.29,
+    "top_speed_kmh": 33.27,
+    "avg_speed_kmh": 9.92,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 1.1724137931034482,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_433": {
+    "player_name": "chelsea_unknown_433",
+    "team_id": "unknown",
+    "minutes_played": 0.22,
+    "distance_covered_m": 29.83,
+    "top_speed_kmh": 37.87,
+    "avg_speed_kmh": 8.01,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_434": {
+    "player_name": "tottenham_unknown_434",
+    "team_id": "unknown",
+    "minutes_played": 0.35,
+    "distance_covered_m": 48.9,
+    "top_speed_kmh": 35.83,
+    "avg_speed_kmh": 8.4,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.9655172413793104,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_436": {
+    "player_name": "tottenham_unknown_436",
+    "team_id": "unknown",
+    "minutes_played": 0.35,
+    "distance_covered_m": 54.9,
+    "top_speed_kmh": 37.57,
+    "avg_speed_kmh": 9.33,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.4482758620689655,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_437": {
+    "player_name": "tottenham_unknown_437",
+    "team_id": "unknown",
+    "minutes_played": 0.22,
+    "distance_covered_m": 26.16,
+    "top_speed_kmh": 37.84,
+    "avg_speed_kmh": 7.04,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.13793103448275862,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_438": {
+    "player_name": "chelsea_unknown_438",
+    "team_id": "unknown",
+    "minutes_played": 0.31,
+    "distance_covered_m": 46.83,
+    "top_speed_kmh": 37.93,
+    "avg_speed_kmh": 9.1,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.5172413793103449,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_439": {
+    "player_name": "tottenham_unknown_439",
+    "team_id": "unknown",
+    "minutes_played": 0.17,
+    "distance_covered_m": 21.34,
+    "top_speed_kmh": 36.54,
+    "avg_speed_kmh": 7.55,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.034482758620689655,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_440": {
+    "player_name": "chelsea_unknown_440",
+    "team_id": "unknown",
+    "minutes_played": 0.22,
+    "distance_covered_m": 40.86,
+    "top_speed_kmh": 34.82,
+    "avg_speed_kmh": 11.12,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.7931034482758621,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_441": {
+    "player_name": "tottenham_unknown_441",
+    "team_id": "unknown",
+    "minutes_played": 0.18,
+    "distance_covered_m": 22.89,
+    "top_speed_kmh": 31.43,
+    "avg_speed_kmh": 7.51,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 4.241379310344827,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_442": {
+    "player_name": "tottenham_unknown_442",
+    "team_id": "unknown",
+    "minutes_played": 0.32,
+    "distance_covered_m": 39.94,
+    "top_speed_kmh": 34.82,
+    "avg_speed_kmh": 7.49,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_443": {
+    "player_name": "tottenham_unknown_443",
+    "team_id": "unknown",
+    "minutes_played": 0.12,
+    "distance_covered_m": 19.33,
+    "top_speed_kmh": 37.12,
+    "avg_speed_kmh": 9.34,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.034482758620689655,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_444": {
+    "player_name": "chelsea_unknown_444",
+    "team_id": "unknown",
+    "minutes_played": 0.17,
+    "distance_covered_m": 34.85,
+    "top_speed_kmh": 36.91,
+    "avg_speed_kmh": 12.5,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.034482758620689655,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_447": {
+    "player_name": "chelsea_unknown_447",
+    "team_id": "unknown",
+    "minutes_played": 0.32,
+    "distance_covered_m": 46.71,
+    "top_speed_kmh": 34.03,
+    "avg_speed_kmh": 8.66,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.034482758620689655,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_471": {
+    "player_name": "tottenham_unknown_471",
+    "team_id": "unknown",
+    "minutes_played": 0.21,
+    "distance_covered_m": 37.51,
+    "top_speed_kmh": 36.56,
+    "avg_speed_kmh": 10.53,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.5172413793103449,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4588": {
+    "player_name": "chelsea_unknown_4588",
+    "team_id": "unknown",
+    "minutes_played": 0.18,
+    "distance_covered_m": 26.51,
+    "top_speed_kmh": 23.81,
+    "avg_speed_kmh": 8.71,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 3.3448275862068964,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4612": {
+    "player_name": "chelsea_unknown_4612",
+    "team_id": "unknown",
+    "minutes_played": 0.13,
+    "distance_covered_m": 17.97,
+    "top_speed_kmh": 22.34,
+    "avg_speed_kmh": 8.34,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_517": {
+    "player_name": "tottenham_unknown_517",
+    "team_id": "unknown",
+    "minutes_played": 0.27,
+    "distance_covered_m": 44.11,
+    "top_speed_kmh": 36.56,
+    "avg_speed_kmh": 9.59,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_532": {
+    "player_name": "chelsea_unknown_532",
+    "team_id": "unknown",
+    "minutes_played": 0.26,
+    "distance_covered_m": 47.5,
+    "top_speed_kmh": 37.12,
+    "avg_speed_kmh": 10.75,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_sanchez_1": {
+    "player_name": "Robert Sanchez",
+    "team_id": "chelsea",
+    "minutes_played": 0.3,
+    "distance_covered_m": 56.19,
+    "top_speed_kmh": 27.68,
+    "avg_speed_kmh": 11.3,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_538": {
+    "player_name": "tottenham_unknown_538",
+    "team_id": "unknown",
+    "minutes_played": 0.23,
+    "distance_covered_m": 37.55,
+    "top_speed_kmh": 37.37,
+    "avg_speed_kmh": 9.76,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.06896551724137931,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4631": {
+    "player_name": "tottenham_unknown_4631",
+    "team_id": "unknown",
+    "minutes_played": 0.27,
+    "distance_covered_m": 56.93,
+    "top_speed_kmh": 27.68,
+    "avg_speed_kmh": 12.46,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_551": {
+    "player_name": "tottenham_unknown_551",
+    "team_id": "unknown",
+    "minutes_played": 0.23,
+    "distance_covered_m": 44.28,
+    "top_speed_kmh": 36.75,
+    "avg_speed_kmh": 11.59,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.1724137931034483,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4652": {
+    "player_name": "tottenham_unknown_4652",
+    "team_id": "unknown",
+    "minutes_played": 0.1,
+    "distance_covered_m": 12.58,
+    "top_speed_kmh": 32.86,
+    "avg_speed_kmh": 7.26,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2619": {
+    "player_name": "tottenham_unknown_2619",
+    "team_id": "unknown",
+    "minutes_played": 0.24,
+    "distance_covered_m": 35.8,
+    "top_speed_kmh": 20.38,
+    "avg_speed_kmh": 9.01,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2620": {
+    "player_name": "chelsea_unknown_2620",
+    "team_id": "unknown",
+    "minutes_played": 0.24,
+    "distance_covered_m": 43.37,
+    "top_speed_kmh": 26.39,
+    "avg_speed_kmh": 10.92,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.10344827586206896,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2621": {
+    "player_name": "chelsea_unknown_2621",
+    "team_id": "unknown",
+    "minutes_played": 0.11,
+    "distance_covered_m": 9.94,
+    "top_speed_kmh": 17.16,
+    "avg_speed_kmh": 5.27,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2622": {
+    "player_name": "tottenham_unknown_2622",
+    "team_id": "unknown",
+    "minutes_played": 0.1,
+    "distance_covered_m": 14.25,
+    "top_speed_kmh": 22.22,
+    "avg_speed_kmh": 8.48,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.06896551724137931,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2623": {
+    "player_name": "tottenham_unknown_2623",
+    "team_id": "unknown",
+    "minutes_played": 0.22,
+    "distance_covered_m": 32.6,
+    "top_speed_kmh": 25.64,
+    "avg_speed_kmh": 8.9,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.1724137931034483,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2624": {
+    "player_name": "chelsea_unknown_2624",
+    "team_id": "unknown",
+    "minutes_played": 0.24,
+    "distance_covered_m": 26.72,
+    "top_speed_kmh": 18.18,
+    "avg_speed_kmh": 6.75,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2625": {
+    "player_name": "tottenham_unknown_2625",
+    "team_id": "unknown",
+    "minutes_played": 0.15,
+    "distance_covered_m": 20.83,
+    "top_speed_kmh": 30.47,
+    "avg_speed_kmh": 8.56,
+    "sprints_count": 1,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2626": {
+    "player_name": "chelsea_unknown_2626",
+    "team_id": "unknown",
+    "minutes_played": 0.09,
+    "distance_covered_m": 8.75,
+    "top_speed_kmh": 11.82,
+    "avg_speed_kmh": 5.59,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2627": {
+    "player_name": "chelsea_unknown_2627",
+    "team_id": "unknown",
+    "minutes_played": 0.1,
+    "distance_covered_m": 7.9,
+    "top_speed_kmh": 10.52,
+    "avg_speed_kmh": 4.38,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2628": {
+    "player_name": "tottenham_unknown_2628",
+    "team_id": "unknown",
+    "minutes_played": 0.16,
+    "distance_covered_m": 23.93,
+    "top_speed_kmh": 37.93,
+    "avg_speed_kmh": 9.19,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2629": {
+    "player_name": "chelsea_unknown_2629",
+    "team_id": "unknown",
+    "minutes_played": 0.14,
+    "distance_covered_m": 17.14,
+    "top_speed_kmh": 26.23,
+    "avg_speed_kmh": 7.0,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2630": {
+    "player_name": "tottenham_unknown_2630",
+    "team_id": "unknown",
+    "minutes_played": 0.13,
+    "distance_covered_m": 14.2,
+    "top_speed_kmh": 36.56,
+    "avg_speed_kmh": 6.64,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2631": {
+    "player_name": "tottenham_unknown_2631",
+    "team_id": "unknown",
+    "minutes_played": 0.12,
+    "distance_covered_m": 10.09,
+    "top_speed_kmh": 17.02,
+    "avg_speed_kmh": 5.02,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2632": {
+    "player_name": "tottenham_unknown_2632",
+    "team_id": "unknown",
+    "minutes_played": 0.19,
+    "distance_covered_m": 31.18,
+    "top_speed_kmh": 31.32,
+    "avg_speed_kmh": 9.93,
+    "sprints_count": 1,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_585": {
+    "player_name": "chelsea_unknown_585",
+    "team_id": "unknown",
+    "minutes_played": 0.22,
+    "distance_covered_m": 34.01,
+    "top_speed_kmh": 36.63,
+    "avg_speed_kmh": 9.25,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2634": {
+    "player_name": "chelsea_unknown_2634",
+    "team_id": "unknown",
+    "minutes_played": 0.11,
+    "distance_covered_m": 6.69,
+    "top_speed_kmh": 7.83,
+    "avg_speed_kmh": 3.66,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_587": {
+    "player_name": "chelsea_unknown_587",
+    "team_id": "unknown",
+    "minutes_played": 0.11,
+    "distance_covered_m": 17.14,
+    "top_speed_kmh": 35.14,
+    "avg_speed_kmh": 9.09,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 1.896551724137931,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2636": {
+    "player_name": "tottenham_unknown_2636",
+    "team_id": "unknown",
+    "minutes_played": 0.15,
+    "distance_covered_m": 21.31,
+    "top_speed_kmh": 33.96,
+    "avg_speed_kmh": 8.65,
+    "sprints_count": 1,
+    "sport_metrics": {
+      "possession_time_sec": 0.034482758620689655,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2638": {
+    "player_name": "tottenham_unknown_2638",
+    "team_id": "unknown",
+    "minutes_played": 0.17,
+    "distance_covered_m": 23.54,
+    "top_speed_kmh": 19.96,
+    "avg_speed_kmh": 8.15,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 4.724137931034483,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2639": {
+    "player_name": "chelsea_unknown_2639",
+    "team_id": "unknown",
+    "minutes_played": 0.13,
+    "distance_covered_m": 14.6,
+    "top_speed_kmh": 28.83,
+    "avg_speed_kmh": 6.39,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2641": {
+    "player_name": "tottenham_unknown_2641",
+    "team_id": "unknown",
+    "minutes_played": 0.34,
+    "distance_covered_m": 53.57,
+    "top_speed_kmh": 32.52,
+    "avg_speed_kmh": 9.43,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.41379310344827586,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4698": {
+    "player_name": "chelsea_unknown_4698",
+    "team_id": "unknown",
+    "minutes_played": 0.17,
+    "distance_covered_m": 34.63,
+    "top_speed_kmh": 27.44,
+    "avg_speed_kmh": 11.89,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 2.103448275862069,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_607": {
+    "player_name": "tottenham_unknown_607",
+    "team_id": "unknown",
+    "minutes_played": 0.2,
+    "distance_covered_m": 27.73,
+    "top_speed_kmh": 36.91,
+    "avg_speed_kmh": 8.32,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.034482758620689655,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_609": {
+    "player_name": "chelsea_unknown_609",
+    "team_id": "unknown",
+    "minutes_played": 0.21,
+    "distance_covered_m": 28.55,
+    "top_speed_kmh": 36.75,
+    "avg_speed_kmh": 8.1,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4710": {
+    "player_name": "chelsea_unknown_4710",
+    "team_id": "unknown",
+    "minutes_played": 0.18,
+    "distance_covered_m": 26.41,
+    "top_speed_kmh": 26.39,
+    "avg_speed_kmh": 9.01,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 2.8620689655172415,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_628": {
+    "player_name": "chelsea_unknown_628",
+    "team_id": "unknown",
+    "minutes_played": 0.09,
+    "distance_covered_m": 10.92,
+    "top_speed_kmh": 22.79,
+    "avg_speed_kmh": 7.5,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 2.3793103448275863,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4736": {
+    "player_name": "tottenham_unknown_4736",
+    "team_id": "unknown",
+    "minutes_played": 0.15,
+    "distance_covered_m": 26.12,
+    "top_speed_kmh": 31.99,
+    "avg_speed_kmh": 10.37,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2699": {
+    "player_name": "tottenham_unknown_2699",
+    "team_id": "unknown",
+    "minutes_played": 0.16,
+    "distance_covered_m": 29.25,
+    "top_speed_kmh": 27.68,
+    "avg_speed_kmh": 11.23,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.034482758620689655,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2700": {
+    "player_name": "chelsea_unknown_2700",
+    "team_id": "unknown",
+    "minutes_played": 0.15,
+    "distance_covered_m": 26.98,
+    "top_speed_kmh": 27.41,
+    "avg_speed_kmh": 10.59,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.3793103448275862,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4749": {
+    "player_name": "tottenham_unknown_4749",
+    "team_id": "unknown",
+    "minutes_played": 0.09,
+    "distance_covered_m": 18.84,
+    "top_speed_kmh": 28.5,
+    "avg_speed_kmh": 12.53,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.7241379310344828,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4750": {
+    "player_name": "tottenham_unknown_4750",
+    "team_id": "unknown",
+    "minutes_played": 0.15,
+    "distance_covered_m": 23.16,
+    "top_speed_kmh": 33.01,
+    "avg_speed_kmh": 9.52,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 1.8620689655172413,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_2719": {
+    "player_name": "tottenham_unknown_2719",
+    "team_id": "unknown",
+    "minutes_played": 0.11,
+    "distance_covered_m": 20.56,
+    "top_speed_kmh": 20.88,
+    "avg_speed_kmh": 11.0,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.034482758620689655,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_679": {
+    "player_name": "tottenham_unknown_679",
+    "team_id": "unknown",
+    "minutes_played": 0.13,
+    "distance_covered_m": 20.68,
+    "top_speed_kmh": 32.73,
+    "avg_speed_kmh": 9.47,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4779": {
+    "player_name": "tottenham_unknown_4779",
+    "team_id": "unknown",
+    "minutes_played": 0.11,
+    "distance_covered_m": 21.0,
+    "top_speed_kmh": 22.18,
+    "avg_speed_kmh": 11.24,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 1.1379310344827587,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_685": {
+    "player_name": "chelsea_unknown_685",
+    "team_id": "unknown",
+    "minutes_played": 0.1,
+    "distance_covered_m": 21.9,
+    "top_speed_kmh": 37.87,
+    "avg_speed_kmh": 12.56,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_688": {
+    "player_name": "tottenham_unknown_688",
+    "team_id": "unknown",
+    "minutes_played": 0.12,
+    "distance_covered_m": 19.48,
+    "top_speed_kmh": 37.87,
+    "avg_speed_kmh": 9.49,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 3.1379310344827585,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2736": {
+    "player_name": "chelsea_unknown_2736",
+    "team_id": "unknown",
+    "minutes_played": 0.12,
+    "distance_covered_m": 24.02,
+    "top_speed_kmh": 23.49,
+    "avg_speed_kmh": 11.66,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.2413793103448276,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_693": {
+    "player_name": "chelsea_unknown_693",
+    "team_id": "unknown",
+    "minutes_played": 0.1,
+    "distance_covered_m": 15.91,
+    "top_speed_kmh": 37.84,
+    "avg_speed_kmh": 9.28,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.6206896551724138,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4798": {
+    "player_name": "chelsea_unknown_4798",
+    "team_id": "unknown",
+    "minutes_played": 0.09,
+    "distance_covered_m": 14.62,
+    "top_speed_kmh": 23.53,
+    "avg_speed_kmh": 9.66,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_713": {
+    "player_name": "chelsea_unknown_713",
+    "team_id": "unknown",
+    "minutes_played": 0.1,
+    "distance_covered_m": 19.58,
+    "top_speed_kmh": 37.87,
+    "avg_speed_kmh": 11.04,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4879": {
+    "player_name": "chelsea_unknown_4879",
+    "team_id": "unknown",
+    "minutes_played": 0.14,
+    "distance_covered_m": 33.52,
+    "top_speed_kmh": 32.86,
+    "avg_speed_kmh": 14.57,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.10344827586206896,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4877": {
+    "player_name": "tottenham_unknown_4877",
+    "team_id": "unknown",
+    "minutes_played": 0.18,
+    "distance_covered_m": 23.59,
+    "top_speed_kmh": 25.34,
+    "avg_speed_kmh": 7.91,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.10344827586206896,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4878": {
+    "player_name": "chelsea_unknown_4878",
+    "team_id": "unknown",
+    "minutes_played": 0.11,
+    "distance_covered_m": 33.69,
+    "top_speed_kmh": 36.0,
+    "avg_speed_kmh": 18.13,
+    "sprints_count": 1,
+    "sport_metrics": {
+      "possession_time_sec": 0.3793103448275862,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4880": {
+    "player_name": "tottenham_unknown_4880",
+    "team_id": "unknown",
+    "minutes_played": 0.19,
+    "distance_covered_m": 32.43,
+    "top_speed_kmh": 26.23,
+    "avg_speed_kmh": 10.48,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4884": {
+    "player_name": "chelsea_unknown_4884",
+    "team_id": "unknown",
+    "minutes_played": 0.19,
+    "distance_covered_m": 31.29,
+    "top_speed_kmh": 28.98,
+    "avg_speed_kmh": 10.11,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 1.3103448275862069,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4886": {
+    "player_name": "chelsea_unknown_4886",
+    "team_id": "unknown",
+    "minutes_played": 0.19,
+    "distance_covered_m": 26.87,
+    "top_speed_kmh": 37.93,
+    "avg_speed_kmh": 8.69,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.8620689655172413,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4887": {
+    "player_name": "chelsea_unknown_4887",
+    "team_id": "unknown",
+    "minutes_played": 0.19,
+    "distance_covered_m": 29.13,
+    "top_speed_kmh": 27.44,
+    "avg_speed_kmh": 9.41,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.13793103448275862,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4883": {
+    "player_name": "tottenham_unknown_4883",
+    "team_id": "unknown",
+    "minutes_played": 0.11,
+    "distance_covered_m": 32.52,
+    "top_speed_kmh": 35.33,
+    "avg_speed_kmh": 17.87,
+    "sprints_count": 1,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4885": {
+    "player_name": "tottenham_unknown_4885",
+    "team_id": "unknown",
+    "minutes_played": 0.19,
+    "distance_covered_m": 32.42,
+    "top_speed_kmh": 27.53,
+    "avg_speed_kmh": 10.48,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.7931034482758621,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4893": {
+    "player_name": "tottenham_unknown_4893",
+    "team_id": "unknown",
+    "minutes_played": 0.19,
+    "distance_covered_m": 36.85,
+    "top_speed_kmh": 24.06,
+    "avg_speed_kmh": 11.91,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.3793103448275862,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4889": {
+    "player_name": "tottenham_unknown_4889",
+    "team_id": "unknown",
+    "minutes_played": 0.12,
+    "distance_covered_m": 28.08,
+    "top_speed_kmh": 30.01,
+    "avg_speed_kmh": 14.3,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4890": {
+    "player_name": "tottenham_unknown_4890",
+    "team_id": "unknown",
+    "minutes_played": 0.19,
+    "distance_covered_m": 27.27,
+    "top_speed_kmh": 25.1,
+    "avg_speed_kmh": 8.81,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.27586206896551724,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4894": {
+    "player_name": "tottenham_unknown_4894",
+    "team_id": "unknown",
+    "minutes_played": 0.19,
+    "distance_covered_m": 25.11,
+    "top_speed_kmh": 29.18,
+    "avg_speed_kmh": 8.11,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.3103448275862069,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4921": {
+    "player_name": "chelsea_unknown_4921",
+    "team_id": "unknown",
+    "minutes_played": 0.12,
+    "distance_covered_m": 17.61,
+    "top_speed_kmh": 30.72,
+    "avg_speed_kmh": 8.88,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.3103448275862069,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4946": {
+    "player_name": "tottenham_unknown_4946",
+    "team_id": "unknown",
+    "minutes_played": 0.12,
+    "distance_covered_m": 8.69,
+    "top_speed_kmh": 9.23,
+    "avg_speed_kmh": 4.22,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.3793103448275862,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_3834": {
+    "player_name": "tottenham_unknown_3834",
+    "team_id": "unknown",
+    "minutes_played": 0.08,
+    "distance_covered_m": 19.8,
+    "top_speed_kmh": 37.93,
+    "avg_speed_kmh": 14.06,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4957": {
+    "player_name": "tottenham_unknown_4957",
+    "team_id": "unknown",
+    "minutes_played": 0.11,
+    "distance_covered_m": 14.3,
+    "top_speed_kmh": 31.99,
+    "avg_speed_kmh": 7.56,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 1.0689655172413792,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4964": {
+    "player_name": "chelsea_unknown_4964",
+    "team_id": "unknown",
+    "minutes_played": 0.1,
+    "distance_covered_m": 27.95,
+    "top_speed_kmh": 23.49,
+    "avg_speed_kmh": 16.18,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_2996": {
+    "player_name": "chelsea_unknown_2996",
+    "team_id": "unknown",
+    "minutes_played": 0.14,
+    "distance_covered_m": 30.13,
+    "top_speed_kmh": 33.96,
+    "avg_speed_kmh": 12.94,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_3014": {
+    "player_name": "tottenham_unknown_3014",
+    "team_id": "unknown",
+    "minutes_played": 0.12,
+    "distance_covered_m": 31.16,
+    "top_speed_kmh": 35.88,
+    "avg_speed_kmh": 15.08,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.10344827586206896,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_3042": {
+    "player_name": "chelsea_unknown_3042",
+    "team_id": "unknown",
+    "minutes_played": 0.11,
+    "distance_covered_m": 29.76,
+    "top_speed_kmh": 35.91,
+    "avg_speed_kmh": 15.13,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.034482758620689655,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4675": {
+    "player_name": "tottenham_unknown_4675",
+    "team_id": "unknown",
+    "minutes_played": 0.21,
+    "distance_covered_m": 51.33,
+    "top_speed_kmh": 32.65,
+    "avg_speed_kmh": 14.33,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.4827586206896552,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4676": {
+    "player_name": "chelsea_unknown_4676",
+    "team_id": "unknown",
+    "minutes_played": 0.21,
+    "distance_covered_m": 41.13,
+    "top_speed_kmh": 27.53,
+    "avg_speed_kmh": 11.52,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.034482758620689655,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_1012": {
+    "player_name": "tottenham_unknown_1012",
+    "team_id": "unknown",
+    "minutes_played": 0.12,
+    "distance_covered_m": 13.94,
+    "top_speed_kmh": 19.62,
+    "avg_speed_kmh": 7.17,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_1014": {
+    "player_name": "tottenham_unknown_1014",
+    "team_id": "unknown",
+    "minutes_played": 0.11,
+    "distance_covered_m": 7.62,
+    "top_speed_kmh": 22.34,
+    "avg_speed_kmh": 3.98,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.034482758620689655,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_1016": {
+    "player_name": "tottenham_unknown_1016",
+    "team_id": "unknown",
+    "minutes_played": 0.11,
+    "distance_covered_m": 10.59,
+    "top_speed_kmh": 13.12,
+    "avg_speed_kmh": 5.67,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_1017": {
+    "player_name": "chelsea_unknown_1017",
+    "team_id": "unknown",
+    "minutes_played": 0.09,
+    "distance_covered_m": 13.03,
+    "top_speed_kmh": 27.25,
+    "avg_speed_kmh": 8.06,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_1020": {
+    "player_name": "tottenham_unknown_1020",
+    "team_id": "unknown",
+    "minutes_played": 0.1,
+    "distance_covered_m": 6.86,
+    "top_speed_kmh": 17.78,
+    "avg_speed_kmh": 4.21,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_3063": {
+    "player_name": "chelsea_unknown_3063",
+    "team_id": "unknown",
+    "minutes_played": 0.13,
+    "distance_covered_m": 34.39,
+    "top_speed_kmh": 34.22,
+    "avg_speed_kmh": 15.65,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.06896551724137931,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4345": {
+    "player_name": "tottenham_unknown_4345",
+    "team_id": "unknown",
+    "minutes_played": 0.2,
+    "distance_covered_m": 42.43,
+    "top_speed_kmh": 36.75,
+    "avg_speed_kmh": 12.88,
+    "sprints_count": 1,
+    "sport_metrics": {
+      "possession_time_sec": 1.0344827586206897,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_3726": {
+    "player_name": "tottenham_unknown_3726",
+    "team_id": "unknown",
+    "minutes_played": 0.55,
+    "distance_covered_m": 91.77,
+    "top_speed_kmh": 37.87,
+    "avg_speed_kmh": 10.06,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_3729": {
+    "player_name": "chelsea_unknown_3729",
+    "team_id": "unknown",
+    "minutes_played": 0.54,
+    "distance_covered_m": 96.81,
+    "top_speed_kmh": 37.87,
+    "avg_speed_kmh": 10.73,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 1.5172413793103448,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_3730": {
+    "player_name": "tottenham_unknown_3730",
+    "team_id": "unknown",
+    "minutes_played": 0.22,
+    "distance_covered_m": 45.4,
+    "top_speed_kmh": 37.97,
+    "avg_speed_kmh": 12.18,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_3738": {
+    "player_name": "chelsea_unknown_3738",
+    "team_id": "unknown",
+    "minutes_played": 0.22,
+    "distance_covered_m": 40.16,
+    "top_speed_kmh": 37.84,
+    "avg_speed_kmh": 10.83,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 3.7586206896551726,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_3753": {
+    "player_name": "tottenham_unknown_3753",
+    "team_id": "unknown",
+    "minutes_played": 0.51,
+    "distance_covered_m": 92.91,
+    "top_speed_kmh": 37.84,
+    "avg_speed_kmh": 10.89,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.9310344827586207,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_3754": {
+    "player_name": "tottenham_unknown_3754",
+    "team_id": "unknown",
+    "minutes_played": 0.19,
+    "distance_covered_m": 28.94,
+    "top_speed_kmh": 37.93,
+    "avg_speed_kmh": 9.1,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.20689655172413793,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_3928": {
+    "player_name": "tottenham_unknown_3928",
+    "team_id": "unknown",
+    "minutes_played": 0.39,
+    "distance_covered_m": 70.94,
+    "top_speed_kmh": 37.87,
+    "avg_speed_kmh": 10.95,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 2.3448275862068964,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_3943": {
+    "player_name": "chelsea_unknown_3943",
+    "team_id": "unknown",
+    "minutes_played": 0.23,
+    "distance_covered_m": 47.88,
+    "top_speed_kmh": 34.17,
+    "avg_speed_kmh": 12.46,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.7931034482758621,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_3954": {
+    "player_name": "chelsea_unknown_3954",
+    "team_id": "unknown",
+    "minutes_played": 0.1,
+    "distance_covered_m": 26.48,
+    "top_speed_kmh": 34.09,
+    "avg_speed_kmh": 16.46,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.7241379310344828,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_3961": {
+    "player_name": "chelsea_unknown_3961",
+    "team_id": "unknown",
+    "minutes_played": 0.13,
+    "distance_covered_m": 32.58,
+    "top_speed_kmh": 33.55,
+    "avg_speed_kmh": 14.73,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4000": {
+    "player_name": "tottenham_unknown_4000",
+    "team_id": "unknown",
+    "minutes_played": 0.09,
+    "distance_covered_m": 24.93,
+    "top_speed_kmh": 35.26,
+    "avg_speed_kmh": 15.87,
+    "sprints_count": 1,
+    "sport_metrics": {
+      "possession_time_sec": 0.4482758620689655,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4054": {
+    "player_name": "chelsea_unknown_4054",
+    "team_id": "unknown",
+    "minutes_played": 0.3,
+    "distance_covered_m": 51.94,
+    "top_speed_kmh": 37.87,
+    "avg_speed_kmh": 10.37,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 6.655172413793103,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4063": {
+    "player_name": "tottenham_unknown_4063",
+    "team_id": "unknown",
+    "minutes_played": 0.29,
+    "distance_covered_m": 42.76,
+    "top_speed_kmh": 36.91,
+    "avg_speed_kmh": 9.0,
+    "sprints_count": 1,
+    "sport_metrics": {
+      "possession_time_sec": 1.3103448275862069,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4069": {
+    "player_name": "chelsea_unknown_4069",
+    "team_id": "unknown",
+    "minutes_played": 0.33,
+    "distance_covered_m": 47.82,
+    "top_speed_kmh": 37.9,
+    "avg_speed_kmh": 8.62,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "chelsea_unknown_4072": {
+    "player_name": "chelsea_unknown_4072",
+    "team_id": "unknown",
+    "minutes_played": 0.22,
+    "distance_covered_m": 21.7,
+    "top_speed_kmh": 36.54,
+    "avg_speed_kmh": 6.02,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 1.4827586206896552,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4073": {
+    "player_name": "tottenham_unknown_4073",
+    "team_id": "unknown",
+    "minutes_played": 0.09,
+    "distance_covered_m": 16.7,
+    "top_speed_kmh": 36.56,
+    "avg_speed_kmh": 10.97,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4076": {
+    "player_name": "tottenham_unknown_4076",
+    "team_id": "unknown",
+    "minutes_played": 0.08,
+    "distance_covered_m": 14.88,
+    "top_speed_kmh": 34.16,
+    "avg_speed_kmh": 10.57,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  },
+  "tottenham_unknown_4083": {
+    "player_name": "tottenham_unknown_4083",
+    "team_id": "unknown",
+    "minutes_played": 0.21,
+    "distance_covered_m": 20.75,
+    "top_speed_kmh": 35.26,
+    "avg_speed_kmh": 6.05,
+    "sprints_count": 0,
+    "sport_metrics": {
+      "possession_time_sec": 0.0,
+      "passes_attempted": 0,
+      "passes_completed": 0,
+      "pass_accuracy": 0.0,
+      "shots": 0,
+      "shots_on_target": 0,
+      "tackles_won": 0,
+      "tackles_attempted": 0
+    }
+  }
+}

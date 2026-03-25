@@ -1,0 +1,83 @@
+{
+  "_comment": "Chicago FC United MLS Next U19 — Veo fixed overhead camera. Fill in opponent team for each game.",
+
+  "match_id": "chicago_u19_vs_scwave_sep14",
+  "sport": "soccer",
+  "date": "2024-09-14",
+  "competition": "MLS Next U19",
+  "venue": "Chicago FC United Training Ground",
+
+  "unit_system": "imperial",
+
+  "team_home": {
+    "id": "chicago_fc_united",
+    "name": "Chicago FC United",
+    "color_primary": "navy",
+    "color_secondary": "gold",
+    "players": [
+      { "jersey_number": 1,  "name": "GK",               "position": "GK",  "player_id": "cfc_gk_1" },
+      { "jersey_number": 2,  "name": "Player 2",          "position": "RB",  "player_id": "cfc_2" },
+      { "jersey_number": 3,  "name": "Player 3",          "position": "CB",  "player_id": "cfc_3" },
+      { "jersey_number": 4,  "name": "Player 4",          "position": "CB",  "player_id": "cfc_4" },
+      { "jersey_number": 5,  "name": "Player 5",          "position": "LB",  "player_id": "cfc_5" },
+      { "jersey_number": 6,  "name": "Player 6",          "position": "CDM", "player_id": "cfc_6" },
+      { "jersey_number": 7,  "name": "Player 7",          "position": "CM",  "player_id": "cfc_7" },
+      { "jersey_number": 8,  "name": "Player 8",          "position": "CM",  "player_id": "cfc_8" },
+      { "jersey_number": 9,  "name": "Player 9",          "position": "ST",  "player_id": "cfc_9" },
+      { "jersey_number": 10, "name": "Player 10",         "position": "RW",  "player_id": "cfc_10" },
+      { "jersey_number": 11, "name": "Player 11",         "position": "LW",  "player_id": "cfc_11" },
+      { "jersey_number": 12, "name": "Player 12",         "position": "SUB", "player_id": "cfc_12" },
+      { "jersey_number": 13, "name": "Player 13",         "position": "SUB", "player_id": "cfc_13" },
+      { "jersey_number": 14, "name": "Player 14",         "position": "SUB", "player_id": "cfc_14" },
+      { "jersey_number": 15, "name": "Player 15",         "position": "SUB", "player_id": "cfc_15" },
+      { "jersey_number": 16, "name": "Player 16",         "position": "SUB", "player_id": "cfc_16" },
+      { "jersey_number": 17, "name": "Player 17",         "position": "SUB", "player_id": "cfc_17" },
+      { "jersey_number": 18, "name": "Player 18",         "position": "SUB", "player_id": "cfc_18" }
+    ]
+  },
+
+  "team_away": {
+    "id": "sc_wave",
+    "name": "SC Wave",
+    "color_primary": "white",
+    "color_secondary": "red",
+    "players": [
+      { "jersey_number": 1,  "name": "GK",       "position": "GK",  "player_id": "opp_gk_1" },
+      { "jersey_number": 2,  "name": "Player 2", "position": "RB",  "player_id": "opp_2" },
+      { "jersey_number": 3,  "name": "Player 3", "position": "CB",  "player_id": "opp_3" },
+      { "jersey_number": 4,  "name": "Player 4", "position": "CB",  "player_id": "opp_4" },
+      { "jersey_number": 5,  "name": "Player 5", "position": "LB",  "player_id": "opp_5" },
+      { "jersey_number": 6,  "name": "Player 6", "position": "CDM", "player_id": "opp_6" },
+      { "jersey_number": 7,  "name": "Player 7", "position": "CM",  "player_id": "opp_7" },
+      { "jersey_number": 8,  "name": "Player 8", "position": "CM",  "player_id": "opp_8" },
+      { "jersey_number": 9,  "name": "Player 9", "position": "ST",  "player_id": "opp_9" },
+      { "jersey_number": 10, "name": "Player 10","position": "RW",  "player_id": "opp_10" },
+      { "jersey_number": 11, "name": "Player 11","position": "LW",  "player_id": "opp_11" },
+      { "jersey_number": 12, "name": "Player 12","position": "SUB", "player_id": "opp_12" },
+      { "jersey_number": 13, "name": "Player 13","position": "SUB", "player_id": "opp_13" },
+      { "jersey_number": 14, "name": "Player 14","position": "SUB", "player_id": "opp_14" },
+      { "jersey_number": 15, "name": "Player 15","position": "SUB", "player_id": "opp_15" }
+    ]
+  },
+
+  "video_path": "input_videos/scwave_test_5min.mp4",
+
+  "processing_options": {
+    "use_gpu": true,
+
+    "model_path": "models/best.pt",
+
+    "downscale_for_processing": true,
+    "target_processing_height": 720,
+
+    "static_camera": false,
+
+    "visible_field_meters": 105.0,
+
+    "enable_jersey_ocr": true,
+    "jersey_ocr_sample_interval": 60,
+
+    "enable_radar": true,
+    "pitch_model_path": "models/pitch_detection.pt"
+  }
+}

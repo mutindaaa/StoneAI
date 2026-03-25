@@ -1,0 +1,1 @@
+from .jersey_number_detector import JerseyNumberDetector
