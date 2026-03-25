@@ -5,15 +5,37 @@ All visualization functions return (fig, ax) tuples suitable for:
   - st.pyplot(fig)  in Streamlit
   - fig.savefig(path)  for saving to disk
 
-Coordinate system: StatsBomb (120 × 80 yards) unless pitch_type overridden.
-For video-derived events, coordinates are already normalized to [0-105] × [0-68]
-metres — use pitch_type='custom' with appropriate dimensions.
+Coordinate system:
+  kloppy normalizes all coordinates to [0, 1].  Every function here
+  scales to StatsBomb units (x * 120, y * 80) before plotting on a
+  pitch_type='statsbomb' canvas.  For video-derived events whose
+  coordinates are already in metres (0-105 × 0-68), pass
+  pitch_type='custom' and scale accordingly.
 """
 
 import matplotlib
-matplotlib.use("Agg")   # non-interactive backend (safe for Streamlit + CLI)
+matplotlib.use("Agg")   # non-interactive backend — safe for Streamlit + CLI
 import matplotlib.pyplot as plt
 import pandas as pd
+
+
+# ---------------------------------------------------------------------------
+# Internal helpers
+# ---------------------------------------------------------------------------
+
+def _to_str_lower(series: pd.Series) -> pd.Series:
+    """Stringify a column (handles kloppy enum objects) then lowercase."""
+    return series.astype(str).str.lower()
+
+
+def _scale_statsbomb(df: pd.DataFrame, x_col: str, y_col: str):
+    """
+    Return (x, y) Series scaled from kloppy [0, 1] to StatsBomb units
+    (120 × 80).  Clips to valid range.
+    """
+    x = df[x_col].clip(0, 1) * 120.0
+    y = df[y_col].clip(0, 1) * 80.0
+    return x, y
 
 
 # ---------------------------------------------------------------------------
@@ -27,22 +49,32 @@ def shot_map(
     pitch_type: str = "statsbomb",
 ) -> tuple:
     """
-    Draw a shot map. Dots sized by xG, green = goal, red = no goal.
+    Draw a shot map on a half-pitch.
+
+    Dots are sized by xG (default size 100 when xG is missing),
+    coloured green for goals and red for all other outcomes.
+
+    Coordinates are expected in kloppy [0, 1] range and are scaled to
+    StatsBomb 120 × 80 units before plotting.
 
     Args:
-        events_df:  Events DataFrame (kloppy output or video events)
-        team:       Filter to this team name/id (None = all)
+        events_df:  kloppy events DataFrame (or video events with renamed cols)
+        team:       Filter to this team name (None = all teams)
         title:      Plot title
-        pitch_type: mplsoccer pitch type ('statsbomb', 'custom', etc.)
+        pitch_type: mplsoccer pitch type (default 'statsbomb')
 
     Returns:
         (fig, ax)
     """
     from mplsoccer import VerticalPitch
 
-    shots = events_df[events_df["event_type"].str.lower().isin(["shot", "shot_on_target"])]
+    # Normalise event_type to lowercase strings — kloppy returns 'SHOT' (uppercase)
+    et = _to_str_lower(events_df["event_type"])
+    shots = events_df[et.isin(["shot", "shot_on_target"])].copy()
+
     if team:
-        shots = shots[shots.get("team", shots.get("team_id", pd.Series(dtype=str))) == team]
+        team_col = "team" if "team" in shots.columns else "team_id"
+        shots = shots[shots[team_col] == team]
 
     pitch = VerticalPitch(
         pitch_type=pitch_type,
@@ -51,7 +83,7 @@ def shot_map(
         line_color="#4a4a8a",
         goal_type="box",
     )
-    fig, ax = pitch.draw(figsize=(8, 6))
+    fig, ax = pitch.draw(figsize=(10, 8))
     fig.patch.set_facecolor("#1a1a2e")
     ax.set_title(title, color="white", fontsize=14, pad=15)
 
@@ -60,33 +92,38 @@ def shot_map(
                 ha="center", va="center", color="white", fontsize=12)
         return fig, ax
 
-    # Coordinate columns — handle both StatsBomb and video naming
+    # Coordinate columns — handle kloppy naming and video-bridge naming
     x_col = "coordinates_x" if "coordinates_x" in shots.columns else "start_x"
     y_col = "coordinates_y" if "coordinates_y" in shots.columns else "start_y"
 
-    # Size by xG if available, else uniform
+    # Scale from kloppy [0, 1] → StatsBomb 120 × 80
+    x, y = _scale_statsbomb(shots, x_col, y_col)
+
+    # Size by xG if available, else uniform default of 100
     if "shot_statsbomb_xg" in shots.columns:
         sizes = shots["shot_statsbomb_xg"].fillna(0.05) * 1200 + 100
     else:
-        sizes = 200
+        sizes = 100
 
-    # Color by goal / no goal
+    # Color by outcome — stringify result first (kloppy may return enum objects)
     result_col = "result" if "result" in shots.columns else "result_name"
     if result_col in shots.columns:
-        goal_mask = shots[result_col].str.lower().isin(["success", "goal"])
+        results = _to_str_lower(shots[result_col])
+        goal_mask = results.isin(["goal", "success"])
         colors = ["#00d4aa" if g else "#ff6b6b" for g in goal_mask]
     else:
+        goal_mask = pd.Series([False] * len(shots), index=shots.index)
         colors = "#ff6b6b"
 
     pitch.scatter(
-        shots[x_col], shots[y_col],
+        x, y,
         s=sizes, c=colors,
         edgecolors="white", linewidths=0.5,
         alpha=0.85, zorder=3, ax=ax,
     )
 
     n_shots = len(shots)
-    n_goals = sum(1 for c in colors if c == "#00d4aa") if isinstance(colors, list) else 0
+    n_goals = int(goal_mask.sum()) if isinstance(goal_mask, pd.Series) else 0
     ax.text(
         0.02, 0.02,
         f"Shots: {n_shots}  Goals: {n_goals}",
@@ -108,57 +145,122 @@ def pass_network(
     title: str | None = None,
 ) -> tuple:
     """
-    Draw a pass network showing average player positions and connection thickness
-    proportional to number of passes between each pair.
+    Draw a pass network on a half-pitch (VerticalPitch, half=True).
+
+    Node size is proportional to total passes by that player.
+    Line width is proportional to pass count between each pair.
+    Only pairs with >= min_passes passes are connected.
+
+    Pass receivers are inferred from the sequential event order: for each
+    successful pass, the next event from the same team provides the receiver.
+
+    Coordinates are expected in kloppy [0, 1] range and are scaled to
+    StatsBomb 120 × 80 units before computing average positions.
 
     Args:
-        events_df:   Events DataFrame
-        team:        Team name/id to draw
-        min_passes:  Minimum passes between a pair to draw a line
-        pitch_type:  mplsoccer pitch type
+        events_df:   Full kloppy events DataFrame
+        team:        Team name to draw
+        min_passes:  Minimum passes between a pair to draw a connection
+        pitch_type:  mplsoccer pitch type (default 'statsbomb')
         title:       Plot title (auto-generated if None)
 
     Returns:
         (fig, ax)
     """
-    from mplsoccer import Pitch
+    from mplsoccer import VerticalPitch
 
     title = title or f"Pass Network — {team}"
-
-    # Filter passes for this team
     team_col = "team" if "team" in events_df.columns else "team_id"
-    passes = events_df[
-        (events_df["event_type"].str.lower() == "pass") &
-        (events_df[team_col] == team)
-    ].copy()
+    x_col = "coordinates_x" if "coordinates_x" in events_df.columns else "start_x"
+    y_col = "coordinates_y" if "coordinates_y" in events_df.columns else "start_y"
 
-    pitch = Pitch(
+    pitch = VerticalPitch(
         pitch_type=pitch_type,
+        half=True,
         pitch_color="#1a1a2e",
         line_color="#4a4a8a",
     )
-    fig, ax = pitch.draw(figsize=(12, 8))
+    fig, ax = pitch.draw(figsize=(10, 8))
     fig.patch.set_facecolor("#1a1a2e")
     ax.set_title(title, color="white", fontsize=14, pad=10)
 
-    if passes.empty or "player" not in passes.columns:
+    # ── Filter passes for this team ──────────────────────────────────────────
+    et = _to_str_lower(events_df["event_type"])
+    team_passes = events_df[
+        (et == "pass") & (events_df[team_col] == team)
+    ].copy()
+
+    if team_passes.empty or "player" not in team_passes.columns:
         ax.text(0.5, 0.5, "Not enough pass data", transform=ax.transAxes,
                 ha="center", va="center", color="white", fontsize=12)
         return fig, ax
 
-    x_col = "coordinates_x" if "coordinates_x" in passes.columns else "start_x"
-    y_col = "coordinates_y" if "coordinates_y" in passes.columns else "start_y"
+    # Scale kloppy [0, 1] → StatsBomb 120 × 80
+    team_passes = team_passes.copy()
+    team_passes["x_sb"] = team_passes[x_col].clip(0, 1) * 120.0
+    team_passes["y_sb"] = team_passes[y_col].clip(0, 1) * 80.0
 
-    # Average position per player
+    # ── Average position per player ──────────────────────────────────────────
     avg_pos = (
-        passes.groupby("player")[[x_col, y_col]]
+        team_passes.groupby("player")[["x_sb", "y_sb"]]
         .mean()
-        .rename(columns={x_col: "avg_x", y_col: "avg_y"})
+        .rename(columns={"x_sb": "avg_x", "y_sb": "avg_y"})
     )
-    pass_counts = passes.groupby("player").size().rename("n_passes")
-    player_df = avg_pos.join(pass_counts)
+    pass_counts = team_passes.groupby("player").size().rename("n_passes")
+    player_df = avg_pos.join(pass_counts).dropna()
 
-    # Plot nodes
+    if player_df.empty:
+        ax.text(0.5, 0.5, "Could not compute player positions",
+                transform=ax.transAxes, ha="center", va="center",
+                color="white", fontsize=12)
+        return fig, ax
+
+    # ── Infer pass connections from sequential events ─────────────────────────
+    # Sort this team's events by period + timestamp; shift(-1) gives the next
+    # team-event player as the receiver.
+    df_team_seq = (
+        events_df[events_df[team_col] == team]
+        .sort_values(["period_id", "timestamp"])
+        .reset_index(drop=True)
+    )
+    df_team_seq["receiver"] = df_team_seq["player"].shift(-1)
+
+    pass_pairs = df_team_seq[
+        (_to_str_lower(df_team_seq["event_type"]) == "pass") &
+        (df_team_seq["player"].astype(str) != df_team_seq["receiver"].astype(str)) &
+        df_team_seq["receiver"].notna()
+    ].copy()
+
+    connections = (
+        pass_pairs
+        .groupby([pass_pairs["player"].astype(str), pass_pairs["receiver"].astype(str)])
+        .size()
+        .reset_index(name="n")
+    )
+    connections.columns = ["passer", "receiver", "n"]
+    connections = connections[connections["n"] >= min_passes]
+
+    # ── Draw connection lines ─────────────────────────────────────────────────
+    max_n = connections["n"].max() if not connections.empty else 1
+    player_index = player_df.index.astype(str)
+
+    for _, row in connections.iterrows():
+        if row["passer"] in player_index and row["receiver"] in player_index:
+            x_vals = [
+                player_df.loc[player_df.index.astype(str) == row["passer"], "avg_x"].iloc[0],
+                player_df.loc[player_df.index.astype(str) == row["receiver"], "avg_x"].iloc[0],
+            ]
+            y_vals = [
+                player_df.loc[player_df.index.astype(str) == row["passer"], "avg_y"].iloc[0],
+                player_df.loc[player_df.index.astype(str) == row["receiver"], "avg_y"].iloc[0],
+            ]
+            lw = 1.5 + (row["n"] / max_n) * 8.0
+            pitch.lines(
+                x_vals[0], y_vals[0], x_vals[1], y_vals[1],
+                lw=lw, color="white", alpha=0.4, zorder=2, ax=ax,
+            )
+
+    # ── Draw player nodes ────────────────────────────────────────────────────
     pitch.scatter(
         player_df["avg_x"], player_df["avg_y"],
         s=player_df["n_passes"] * 20 + 200,
@@ -234,7 +336,7 @@ def player_heatmap(
 
 def xt_bar_chart(xt_df: pd.DataFrame, title: str = "Top Players by xT") -> tuple:
     """
-    Horizontal bar chart of top players by xT value.
+    Horizontal bar chart of top players by total xT value.
 
     Args:
         xt_df:  Output of spadl_pipeline.top_players_by_xt()
@@ -261,8 +363,10 @@ def xt_bar_chart(xt_df: pd.DataFrame, title: str = "Top Players by xT") -> tuple
     ax.spines[:].set_color("#4a4a8a")
 
     for bar, val in zip(bars, values):
-        ax.text(bar.get_width() + 0.001, bar.get_y() + bar.get_height() / 2,
-                f"{val:.3f}", va="center", color="white", fontsize=8)
+        ax.text(
+            bar.get_width() + 0.001, bar.get_y() + bar.get_height() / 2,
+            f"{val:.3f}", va="center", color="white", fontsize=8,
+        )
 
     fig.tight_layout()
     return fig, ax
@@ -273,7 +377,7 @@ def xt_bar_chart(xt_df: pd.DataFrame, title: str = "Top Players by xT") -> tuple
 # ---------------------------------------------------------------------------
 
 def save_figure(fig, path: str, dpi: int = 150):
-    """Save a matplotlib figure to disk."""
+    """Save a matplotlib figure to disk and close it."""
     import os
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     fig.savefig(path, dpi=dpi, bbox_inches="tight", facecolor=fig.get_facecolor())
