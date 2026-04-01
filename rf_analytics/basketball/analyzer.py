@@ -78,14 +78,25 @@ class BasketballAnalyzer(SportAnalyzer):
     # ------------------------------------------------------------------
 
     def calibrate_field(
-        self, frame: np.ndarray, manual_mode: bool = False
+        self,
+        frame: np.ndarray,
+        manual_mode: bool = False,
+        ball_model_path: str | None = None,
     ) -> FieldCalibration:
         """
         Stub calibration using known court dimensions and linear pixel mapping.
 
         For production, swap in a YOLO keypoint model trained on court lines,
         similar to the soccer pitch detection model.
+
+        Args:
+            frame:           Sample video frame for calibration.
+            manual_mode:     If True, allow manual keypoint selection.
+            ball_model_path: Optional path to dedicated ball detection model.
+                             Stored for future basket-position detection use.
         """
+        if ball_model_path is not None:
+            self._ball_model_path = ball_model_path
         h, w = frame.shape[:2]
         pixel_to_meter_x = COURT_LENGTH / max(w, 1)
         pixel_to_meter_y = COURT_WIDTH  / max(h, 1)

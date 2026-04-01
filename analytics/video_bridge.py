@@ -22,19 +22,32 @@ Coordinate conversion:
 """
 
 import json
+
 import pandas as pd
 
+from analytics.config import (
+    DEFAULT_FRAME_H as _DEFAULT_FRAME_H,
+)
+from analytics.config import (
+    DEFAULT_FRAME_W as _DEFAULT_FRAME_W,
+)
+from analytics.config import (
+    PITCH_LENGTH_M,
+    PITCH_WIDTH_M,
+    RES_4K_H,
+    RES_4K_THRESHOLD,
+    RES_4K_W,
+    RES_HD_H,
+    RES_HD_THRESHOLD,
+    RES_HD_W,
+)
 
 # Mapping from Stone AI event types → SPADL type_name
 _TYPE_MAP = {
-    "pass":              "pass",
-    "shot":              "shot",
-    "possession_change": "tackle",   # closest SPADL equivalent for a turnover
+    "pass": "pass",
+    "shot": "shot",
+    "possession_change": "tackle",  # closest SPADL equivalent for a turnover
 }
-
-# Default frame dimensions (1280×720 is our standard processing resolution)
-_DEFAULT_FRAME_W = 1280
-_DEFAULT_FRAME_H = 720
 
 
 def load_video_events(
@@ -73,30 +86,34 @@ def load_video_events(
             y_m = float(meta["position_y_m"])
         else:
             # Fall back to pixel → metres scaling
-            x_m = e.get("location_x", 0) * 105.0 / frame_w
-            y_m = e.get("location_y", 0) * 68.0  / frame_h
+            x_m = e.get("location_x", 0) * PITCH_LENGTH_M / frame_w
+            y_m = e.get("location_y", 0) * PITCH_WIDTH_M / frame_h
 
-        x_m = round(max(0.0, min(105.0, x_m)), 2)
-        y_m = round(max(0.0, min(68.0,  y_m)), 2)
+        x_m = round(max(0.0, min(PITCH_LENGTH_M, x_m)), 2)
+        y_m = round(max(0.0, min(PITCH_WIDTH_M, y_m)), 2)
 
-        rows.append({
-            "game_id":       0,
-            "period_id":     1,
-            "time_seconds":  float(e.get("timestamp_sec", 0)),
-            "team_id":       e.get("team_id", "unknown"),
-            "player_id":     e.get("player_id", "unknown"),
-            "start_x":       x_m,
-            "start_y":       y_m,
-            "end_x":         x_m,   # receiver position not tracked yet
-            "end_y":         y_m,
-            "type_name":     _TYPE_MAP[etype],
-            "result_name":   "success",
-            "bodypart_name": "foot",
-            # Preserve original fields for reference
-            "_event_type":   etype,
-            "_event_id":     e.get("event_id", ""),
-            "_frame":        e.get("frame_number", 0),
-        })
+        rows.append(
+            {
+                "game_id": 0,
+                "period_id": 1,
+                "time_seconds": float(e.get("timestamp_sec", 0)),
+                "team_id": e.get("team_id", "unknown"),
+                "player_id": e.get("player_id", "unknown"),
+                "start_x": x_m,
+                "start_y": y_m,
+                # TODO: Replace with actual receiver position once pass destinations are tracked.
+                #   Requires: pass receiver track_id in event data + position_transformed for that id.
+                "end_x": x_m,
+                "end_y": y_m,
+                "type_name": _TYPE_MAP[etype],
+                "result_name": "success",
+                "bodypart_name": "foot",
+                # Preserve original fields for reference
+                "_event_type": etype,
+                "_event_id": e.get("event_id", ""),
+                "_frame": e.get("frame_number", 0),
+            }
+        )
 
     if not rows:
         return pd.DataFrame()
@@ -128,14 +145,14 @@ def infer_frame_dimensions(events_path: str) -> tuple[int, int]:
     max_y = max(ys)
 
     # Snap to common resolutions
-    if max_x > 1000:
-        w = 1920 if max_x > 1400 else 1280
+    if max_x > RES_HD_THRESHOLD:
+        w = RES_4K_W if max_x > RES_4K_THRESHOLD else RES_HD_W
     else:
-        w = 1280
+        w = _DEFAULT_FRAME_W
 
     if max_y > 600:
-        h = 1080 if max_y > 800 else 720
+        h = RES_4K_H if max_y > 800 else RES_HD_H
     else:
-        h = 720
+        h = _DEFAULT_FRAME_H
 
     return w, h

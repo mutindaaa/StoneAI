@@ -272,3 +272,93 @@ class SportAnalyzer(ABC):
             'purple': (128, 0, 128),
         }
         return color_map.get(color_name, (128, 128, 128))
+
+    def _build_player_id_map(
+        self,
+        player_tracks: List[Dict],
+        match_config: Dict[str, Any],
+    ) -> Dict[int, str]:
+        """
+        Build mapping from tracking_id to player_id using jersey numbers and SigLIP team assignment.
+
+        Sport-agnostic: works for soccer, basketball, and any future sport that uses the
+        standard tracking data format (team int 1/2, jersey_number, team_color fields).
+
+        Args:
+            player_tracks: Per-frame player tracking data (list of dicts keyed by track_id).
+            match_config:  Match configuration with team rosters.
+
+        Returns:
+            Dictionary mapping tracking_id (int) -> player_id (str).
+        """
+        _team_int_to_id = {
+            1: match_config.get('team_home', {}).get('id', 'team_home'),
+            2: match_config.get('team_away', {}).get('id', 'team_away'),
+        }
+
+        tracking_jerseys: Dict[int, list] = {}
+        tracking_colors:  Dict[int, tuple] = {}
+        tracking_teams:   Dict[int, int]   = {}
+
+        for frame_players in player_tracks:
+            for tracking_id, player_data in frame_players.items():
+                jersey_number = player_data.get('jersey_number')
+                team_color    = player_data.get('team_color')
+                team_int      = player_data.get('team')
+
+                if team_int is not None and tracking_id not in tracking_teams:
+                    tracking_teams[tracking_id] = team_int
+                if team_color is not None and tracking_id not in tracking_colors:
+                    tracking_colors[tracking_id] = team_color
+                if jersey_number is not None and team_color is not None:
+                    tracking_jerseys.setdefault(tracking_id, []).append(
+                        (jersey_number, team_color)
+                    )
+
+        all_tracking_ids: set = set()
+        for frame_players in player_tracks:
+            all_tracking_ids.update(frame_players.keys())
+
+        player_id_map: Dict[int, str] = {}
+        for tracking_id in all_tracking_ids:
+            jersey_colors = tracking_jerseys.get(tracking_id, [])
+            siglip_team   = tracking_teams.get(tracking_id)
+
+            if jersey_colors and siglip_team is not None:
+                jersey_number = max(
+                    set(j for j, _ in jersey_colors),
+                    key=[j for j, _ in jersey_colors].count,
+                )
+                team_id = _team_int_to_id.get(siglip_team, 'unknown')
+                player_id = None
+                for team_key in ('team_home', 'team_away'):
+                    if match_config.get(team_key, {}).get('id') == team_id:
+                        for p in match_config[team_key].get('players', []):
+                            if int(p.get('jersey_number', -1)) == int(jersey_number):
+                                player_id = p['player_id']
+                                break
+                        break
+                if player_id is None:
+                    player_id = f"{team_id}_unknown_{tracking_id}"
+            elif jersey_colors:
+                jersey_number = max(
+                    set(j for j, _ in jersey_colors),
+                    key=[j for j, _ in jersey_colors].count,
+                )
+                team_color = jersey_colors[0][1]
+                player_id = self.map_tracking_id_to_player(
+                    tracking_id, team_color, jersey_number, match_config
+                )
+            elif siglip_team is not None:
+                team_id = _team_int_to_id.get(siglip_team, 'unknown')
+                player_id = f"{team_id}_unknown_{tracking_id}"
+            elif tracking_id in tracking_colors:
+                team_color = tracking_colors[tracking_id]
+                team_id = self._match_team_by_color(team_color, match_config) or 'unknown'
+                player_id = f"{team_id}_unknown_{tracking_id}"
+            else:
+                player_id = f"unknown_{tracking_id}"
+
+            player_id_map[tracking_id] = player_id
+
+        return player_id_map

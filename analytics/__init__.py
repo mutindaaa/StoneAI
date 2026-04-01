@@ -10,7 +10,7 @@ Usage:
     from analytics.visualizer import shot_map, pass_network
 """
 
-from analytics.statsbomb_loader import load_match, list_open_competitions, list_open_matches
+from analytics.statsbomb_loader import list_open_competitions, list_open_matches, load_match
 from analytics.video_bridge import load_video_events
 
 __all__ = [

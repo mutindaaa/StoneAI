@@ -66,6 +66,7 @@
     "use_gpu": true,
 
     "model_path": "models/best.pt",
+    "_model_alt": "models/overhead_soccer.pt  (trained on Roboflow overhead dataset — test showed best.pt scores higher on this footage)",
 
     "downscale_for_processing": true,
     "target_processing_height": 720,

@@ -143,7 +143,10 @@ class MatchProcessor:
         _progress("Object detection & tracking", 1 / 9)
         print("\n[2/9] Running object detection and tracking...")
         model_path = self.config.get('processing_options', {}).get('model_path', 'models/best.pt')
-        tracker = Tracker(model_path)
+        ball_model_path = None
+        if self.sport == 'basketball':
+            ball_model_path = self.config.get('processing_options', {}).get('ball_model_path')
+        tracker = Tracker(model_path, ball_model_path=ball_model_path)
 
         if use_chunked and not os.path.exists(track_stub):
             # Chunked tracking: process in 500-frame chunks, never hold full video in RAM
@@ -389,7 +392,12 @@ class MatchProcessor:
         # Calculate and save metrics using sport analyzer
         print("\n[Bonus] Calculating player metrics...")
         # Use first_frame (always available, read at step 3 init) — safe for chunked path
-        field_calibration = self.sport_analyzer.calibrate_field(first_frame)
+        if self.sport == 'basketball':
+            field_calibration = self.sport_analyzer.calibrate_field(
+                first_frame, ball_model_path=ball_model_path
+            )
+        else:
+            field_calibration = self.sport_analyzer.calibrate_field(first_frame)
         player_metrics = self.sport_analyzer.calculate_metrics(
             tracks,
             self.config,

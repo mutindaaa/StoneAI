@@ -14,33 +14,70 @@ Coordinate system:
 """
 
 import matplotlib
-matplotlib.use("Agg")   # non-interactive backend — safe for Streamlit + CLI
+
+matplotlib.use("Agg")  # non-interactive backend — safe for Streamlit + CLI
+import matplotlib.figure
 import matplotlib.pyplot as plt
 import pandas as pd
 
+from analytics.config import (
+    BAR_CHART_HEIGHT_PER_PLAYER,
+    BAR_CHART_LABEL_OFFSET,
+    BAR_CHART_MIN_HEIGHT,
+    HEATMAP_KDE_LEVELS,
+    HEATMAP_KDE_THRESH,
+    PASS_NET_FIGSIZE,
+    PASS_NET_LINE_MAX,
+    PASS_NET_LINE_SCALE,
+    PASS_NET_MIN_PASSES,
+    PASS_NET_NODE_BASE,
+    PASS_NET_NODE_COLOR,
+    PASS_NET_NODE_SCALE,
+    PASS_NET_PAD,
+    SHOT_MAP_BG_COLOR,
+    SHOT_MAP_COLOR_GOAL,
+    SHOT_MAP_COLOR_NO_GOAL,
+    SHOT_MAP_FIGSIZE,
+    SHOT_MAP_XG_BASE,
+    SHOT_MAP_XG_SCALE,
+    STATSBOMB_LENGTH,
+    STATSBOMB_WIDTH,
+)
 
 # ---------------------------------------------------------------------------
 # Internal helpers
 # ---------------------------------------------------------------------------
+
 
 def _to_str_lower(series: pd.Series) -> pd.Series:
     """Stringify a column (handles kloppy enum objects) then lowercase."""
     return series.astype(str).str.lower()
 
 
-def _scale_statsbomb(df: pd.DataFrame, x_col: str, y_col: str):
+def _scale_statsbomb(df: pd.DataFrame, x_col: str, y_col: str) -> tuple[pd.Series, pd.Series]:
     """
-    Return (x, y) Series scaled from kloppy [0, 1] to StatsBomb units
-    (120 × 80).  Clips to valid range.
+    Return (x, y) Series scaled from kloppy [0, 1] to StatsBomb units.
+
+    Clips values to the valid [0, 1] range before scaling to
+    StatsBomb dimensions (120 × 80).
+
+    Args:
+        df:     DataFrame containing coordinate columns.
+        x_col:  Name of the x-coordinate column (kloppy [0, 1] range).
+        y_col:  Name of the y-coordinate column (kloppy [0, 1] range).
+
+    Returns:
+        Tuple of (x, y) Series in StatsBomb coordinate space.
     """
-    x = df[x_col].clip(0, 1) * 120.0
-    y = df[y_col].clip(0, 1) * 80.0
+    x = df[x_col].clip(0, 1) * STATSBOMB_LENGTH
+    y = df[y_col].clip(0, 1) * STATSBOMB_WIDTH
     return x, y
 
 
 # ---------------------------------------------------------------------------
 # Shot map
 # ---------------------------------------------------------------------------
+
 
 def shot_map(
     events_df: pd.DataFrame,
@@ -79,17 +116,25 @@ def shot_map(
     pitch = VerticalPitch(
         pitch_type=pitch_type,
         half=True,
-        pitch_color="#1a1a2e",
+        pitch_color=SHOT_MAP_BG_COLOR,
         line_color="#4a4a8a",
         goal_type="box",
     )
-    fig, ax = pitch.draw(figsize=(10, 8))
-    fig.patch.set_facecolor("#1a1a2e")
+    fig, ax = pitch.draw(figsize=SHOT_MAP_FIGSIZE)
+    fig.patch.set_facecolor(SHOT_MAP_BG_COLOR)
     ax.set_title(title, color="white", fontsize=14, pad=15)
 
     if shots.empty:
-        ax.text(0.5, 0.5, "No shots detected", transform=ax.transAxes,
-                ha="center", va="center", color="white", fontsize=12)
+        ax.text(
+            0.5,
+            0.5,
+            "No shots detected",
+            transform=ax.transAxes,
+            ha="center",
+            va="center",
+            color="white",
+            fontsize=12,
+        )
         return fig, ax
 
     # Coordinate columns — handle kloppy naming and video-bridge naming
@@ -99,35 +144,43 @@ def shot_map(
     # Scale from kloppy [0, 1] → StatsBomb 120 × 80
     x, y = _scale_statsbomb(shots, x_col, y_col)
 
-    # Size by xG if available, else uniform default of 100
+    # Size by xG if available, else uniform default
     if "shot_statsbomb_xg" in shots.columns:
-        sizes = shots["shot_statsbomb_xg"].fillna(0.05) * 1200 + 100
+        sizes = shots["shot_statsbomb_xg"].fillna(0.05) * SHOT_MAP_XG_SCALE + SHOT_MAP_XG_BASE
     else:
-        sizes = 100
+        sizes = SHOT_MAP_XG_BASE
 
     # Color by outcome — stringify result first (kloppy may return enum objects)
     result_col = "result" if "result" in shots.columns else "result_name"
     if result_col in shots.columns:
         results = _to_str_lower(shots[result_col])
         goal_mask = results.isin(["goal", "success"])
-        colors = ["#00d4aa" if g else "#ff6b6b" for g in goal_mask]
+        colors = [SHOT_MAP_COLOR_GOAL if g else SHOT_MAP_COLOR_NO_GOAL for g in goal_mask]
     else:
         goal_mask = pd.Series([False] * len(shots), index=shots.index)
-        colors = "#ff6b6b"
+        colors = SHOT_MAP_COLOR_NO_GOAL
 
     pitch.scatter(
-        x, y,
-        s=sizes, c=colors,
-        edgecolors="white", linewidths=0.5,
-        alpha=0.85, zorder=3, ax=ax,
+        x,
+        y,
+        s=sizes,
+        c=colors,
+        edgecolors="white",
+        linewidths=0.5,
+        alpha=0.85,
+        zorder=3,
+        ax=ax,
     )
 
     n_shots = len(shots)
     n_goals = int(goal_mask.sum()) if isinstance(goal_mask, pd.Series) else 0
     ax.text(
-        0.02, 0.02,
+        0.02,
+        0.02,
         f"Shots: {n_shots}  Goals: {n_goals}",
-        transform=ax.transAxes, color="white", fontsize=10,
+        transform=ax.transAxes,
+        color="white",
+        fontsize=10,
     )
 
     return fig, ax
@@ -137,49 +190,56 @@ def shot_map(
 # Pass network
 # ---------------------------------------------------------------------------
 
+
 def pass_network(events_df: pd.DataFrame, team: str, title: str = "") -> tuple:
-    """Draw pass network for a team using average player positions."""
+    """
+    Draw pass network for a team using average player positions.
+
+    Args:
+        events_df:  kloppy events DataFrame with 'team', 'event_type',
+                    'coordinates_x', 'coordinates_y', 'player' columns.
+        team:       Team name to render (must match values in the 'team' column).
+        title:      Plot title (defaults to "Pass Network — <team>").
+
+    Returns:
+        (fig, ax)
+    """
     import matplotlib as mpl
-    import matplotlib.pyplot as plt
     from mplsoccer import Pitch
 
     # DejaVu Sans ships with matplotlib and supports full Unicode (Turkish, etc.)
-    mpl.rcParams['font.family'] = 'DejaVu Sans'
+    mpl.rcParams["font.family"] = "DejaVu Sans"
 
     # Use a standard horizontal pitch with statsbomb coords (120x80)
     pitch = Pitch(
-        pitch_type='statsbomb',
-        pitch_color='#0d1117',
-        line_color='#6b7280',
-        pad_top=15,
-        pad_bottom=15,
-        pad_left=15,
-        pad_right=15,
+        pitch_type="statsbomb",
+        pitch_color="#0d1117",
+        line_color="#6b7280",
+        pad_top=PASS_NET_PAD,
+        pad_bottom=PASS_NET_PAD,
+        pad_left=PASS_NET_PAD,
+        pad_right=PASS_NET_PAD,
     )
-    fig, ax = pitch.draw(figsize=(14, 9))
+    fig, ax = pitch.draw(figsize=PASS_NET_FIGSIZE)
 
     # Filter to this team's events
-    team_events = events_df[
-        events_df["team"].astype(str) == str(team)
-    ].copy()
+    team_events = events_df[events_df["team"].astype(str) == str(team)].copy()
 
-    passes = team_events[
-        team_events["event_type"].astype(str).str.upper() == "PASS"
-    ].copy()
+    passes = team_events[team_events["event_type"].astype(str).str.upper() == "PASS"].copy()
 
     if passes.empty:
         ax.set_title(title or f"Pass Network — {team}", color="white", fontsize=14)
         return fig, ax
 
     # Scale coordinates from kloppy [0,1] to StatsBomb 120x80
-    passes["x"] = passes["coordinates_x"].fillna(0.5) * 120
-    passes["y"] = passes["coordinates_y"].fillna(0.5) * 80
+    passes["x"] = passes["coordinates_x"].fillna(0.5) * STATSBOMB_LENGTH
+    passes["y"] = passes["coordinates_y"].fillna(0.5) * STATSBOMB_WIDTH
 
     # Use ALL team events for average position so the full tactical shape is
     # captured — using only passes causes players to cluster where they pass
     # rather than where they actually operate on the pitch.
-    team_events["x"] = team_events["coordinates_x"].fillna(0.5) * 120
-    team_events["y"] = team_events["coordinates_y"].fillna(0.5) * 80
+    team_events["x"] = team_events["coordinates_x"].fillna(0.5) * STATSBOMB_LENGTH
+    team_events["y"] = team_events["coordinates_y"].fillna(0.5) * STATSBOMB_WIDTH
 
     avg_pos = (
         team_events.dropna(subset=["x", "y"])
@@ -207,7 +267,7 @@ def pass_network(events_df: pd.DataFrame, team: str, title: str = "") -> tuple:
         .size()
         .reset_index(name="n")
     )
-    pairs = pairs[pairs["n"] >= 2]
+    pairs = pairs[pairs["n"] >= PASS_NET_MIN_PASSES]
 
     # Draw connection lines
     pos_dict = avg_pos.set_index("player")[["avg_x", "avg_y"]].to_dict("index")
@@ -218,16 +278,18 @@ def pass_network(events_df: pd.DataFrame, team: str, title: str = "") -> tuple:
             continue
         x1, y1 = pos_dict[p1]["avg_x"], pos_dict[p1]["avg_y"]
         x2, y2 = pos_dict[p2]["avg_x"], pos_dict[p2]["avg_y"]
-        lw = min(row["n"] * 0.4, 6)
+        lw = min(row["n"] * PASS_NET_LINE_SCALE, PASS_NET_LINE_MAX)
         pitch.lines(x1, y1, x2, y2, lw=lw, color="white", alpha=0.3, ax=ax)
 
     # Draw player nodes
-    node_sizes = (avg_pos["n_passes"] / avg_pos["n_passes"].max() * 800 + 200).values
+    node_sizes = (
+        avg_pos["n_passes"] / avg_pos["n_passes"].max() * PASS_NET_NODE_SCALE + PASS_NET_NODE_BASE
+    ).values
     pitch.scatter(
         avg_pos["avg_x"].values,
         avg_pos["avg_y"].values,
         s=node_sizes,
-        color="#f5c07a",
+        color=PASS_NET_NODE_COLOR,
         edgecolors="white",
         linewidths=1.5,
         zorder=5,
@@ -248,12 +310,7 @@ def pass_network(events_df: pd.DataFrame, team: str, title: str = "") -> tuple:
         )
 
     ax.set_title(title or f"Pass Network — {team}", color="white", fontsize=14, pad=15)
-    fig.patch.set_facecolor('#0d1117')
-
-    # Debug: print coordinate ranges so we can verify
-    print(f"  [{team}] avg_x range: {avg_pos['avg_x'].min():.1f} – {avg_pos['avg_x'].max():.1f}")
-    print(f"  [{team}] avg_y range: {avg_pos['avg_y'].min():.1f} – {avg_pos['avg_y'].max():.1f}")
-    print(f"  [{team}] players: {avg_pos['player'].tolist()}")
+    fig.patch.set_facecolor("#0d1117")
 
     return fig, ax
 
@@ -261,6 +318,7 @@ def pass_network(events_df: pd.DataFrame, team: str, title: str = "") -> tuple:
 # ---------------------------------------------------------------------------
 # Player heatmap
 # ---------------------------------------------------------------------------
+
 
 def player_heatmap(
     positions_df: pd.DataFrame,
@@ -276,7 +334,8 @@ def player_heatmap(
     Args:
         positions_df:  DataFrame with x/y columns (SPADL actions or tracking data)
         player_id:     Filter to this player (None = all rows)
-        x_col, y_col:  Column names for coordinates
+        x_col:         Column name for the x-coordinate
+        y_col:         Column name for the y-coordinate
         pitch_type:    mplsoccer pitch type
         title:         Plot title
 
@@ -292,20 +351,32 @@ def player_heatmap(
         df = positions_df
         title = title or "Player Heatmap"
 
-    pitch = Pitch(pitch_type=pitch_type, pitch_color="#1a1a2e", line_color="#4a4a8a")
+    pitch = Pitch(pitch_type=pitch_type, pitch_color=SHOT_MAP_BG_COLOR, line_color="#4a4a8a")
     fig, ax = pitch.draw(figsize=(12, 8))
-    fig.patch.set_facecolor("#1a1a2e")
+    fig.patch.set_facecolor(SHOT_MAP_BG_COLOR)
     ax.set_title(title, color="white", fontsize=14)
 
     if df.empty or x_col not in df.columns:
-        ax.text(0.5, 0.5, "No position data", transform=ax.transAxes,
-                ha="center", va="center", color="white")
+        ax.text(
+            0.5,
+            0.5,
+            "No position data",
+            transform=ax.transAxes,
+            ha="center",
+            va="center",
+            color="white",
+        )
         return fig, ax
 
     pitch.kdeplot(
-        df[x_col], df[y_col],
-        ax=ax, fill=True,
-        cmap="hot", alpha=0.75, levels=100, thresh=0.01,
+        df[x_col],
+        df[y_col],
+        ax=ax,
+        fill=True,
+        cmap="hot",
+        alpha=0.75,
+        levels=HEATMAP_KDE_LEVELS,
+        thresh=HEATMAP_KDE_THRESH,
     )
     return fig, ax
 
@@ -314,29 +385,40 @@ def player_heatmap(
 # xT bar chart (top players)
 # ---------------------------------------------------------------------------
 
+
 def xt_bar_chart(xt_df: pd.DataFrame, title: str = "Top Players by xT") -> tuple:
     """
     Horizontal bar chart of top players by total xT value.
 
     Args:
         xt_df:  Output of spadl_pipeline.top_players_by_xt()
+        title:  Plot title
 
     Returns:
         (fig, ax)
     """
-    fig, ax = plt.subplots(figsize=(8, max(4, len(xt_df) * 0.45)))
-    fig.patch.set_facecolor("#1a1a2e")
-    ax.set_facecolor("#1a1a2e")
+    fig, ax = plt.subplots(
+        figsize=(8, max(BAR_CHART_MIN_HEIGHT, len(xt_df) * BAR_CHART_HEIGHT_PER_PLAYER))
+    )
+    fig.patch.set_facecolor(SHOT_MAP_BG_COLOR)
+    ax.set_facecolor(SHOT_MAP_BG_COLOR)
 
     if xt_df.empty:
-        ax.text(0.5, 0.5, "No xT data available", ha="center", va="center",
-                color="white", transform=ax.transAxes)
+        ax.text(
+            0.5,
+            0.5,
+            "No xT data available",
+            ha="center",
+            va="center",
+            color="white",
+            transform=ax.transAxes,
+        )
         return fig, ax
 
     labels = xt_df["player_id"].astype(str)
     values = xt_df["total_xt"]
 
-    bars = ax.barh(labels, values, color="#00d4aa", edgecolor="none", height=0.6)
+    bars = ax.barh(labels, values, color=SHOT_MAP_COLOR_GOAL, edgecolor="none", height=0.6)
     ax.set_xlabel("Total xT", color="white")
     ax.set_title(title, color="white", fontsize=13, pad=10)
     ax.tick_params(colors="white")
@@ -344,8 +426,12 @@ def xt_bar_chart(xt_df: pd.DataFrame, title: str = "Top Players by xT") -> tuple
 
     for bar, val in zip(bars, values):
         ax.text(
-            bar.get_width() + 0.001, bar.get_y() + bar.get_height() / 2,
-            f"{val:.3f}", va="center", color="white", fontsize=8,
+            bar.get_width() + BAR_CHART_LABEL_OFFSET,
+            bar.get_y() + bar.get_height() / 2,
+            f"{val:.3f}",
+            va="center",
+            color="white",
+            fontsize=8,
         )
 
     fig.tight_layout()
@@ -356,9 +442,18 @@ def xt_bar_chart(xt_df: pd.DataFrame, title: str = "Top Players by xT") -> tuple
 # Save helper
 # ---------------------------------------------------------------------------
 
-def save_figure(fig, path: str, dpi: int = 150):
-    """Save a matplotlib figure to disk and close it."""
+
+def save_figure(fig: matplotlib.figure.Figure, path: str, dpi: int = 150) -> None:
+    """
+    Save a matplotlib figure to disk and close it.
+
+    Args:
+        fig:   Matplotlib Figure object to save.
+        path:  Destination file path (directories are created if needed).
+        dpi:   Output resolution in dots per inch.
+    """
     import os
+
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     fig.savefig(path, dpi=dpi, bbox_inches="tight", facecolor=fig.get_facecolor())
     plt.close(fig)

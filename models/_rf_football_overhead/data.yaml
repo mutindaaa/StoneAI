@@ -1,0 +1,13 @@
+train: C:/Users/ASTUF1/.vscode/football_analysis/models/_rf_football_overhead/train/images
+val: C:/Users/ASTUF1/.vscode/football_analysis/models/_rf_football_overhead/valid/images
+test: C:/Users/ASTUF1/.vscode/football_analysis/models/_rf_football_overhead/test/images
+
+nc: 4
+names: ['ball', 'goalkeeper', 'player', 'referee']
+
+roboflow:
+  workspace: roboflow-jvuqo
+  project: football-players-detection-3zvbc
+  version: 15
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/roboflow-jvuqo/football-players-detection-3zvbc/dataset/15

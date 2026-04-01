@@ -50,11 +50,19 @@ def load_match(match_id: int) -> dict:
     # groupby/sort/merge operations work correctly downstream.
     if "player" in events_df.columns:
         events_df["player"] = events_df["player"].apply(
-            lambda p: p.name if hasattr(p, "name") and p is not None else str(p) if p is not None else None
+            lambda p: (
+                p.name
+                if hasattr(p, "name") and p is not None
+                else str(p) if p is not None else None
+            )
         )
     if "team" in events_df.columns:
         events_df["team"] = events_df["team"].apply(
-            lambda t: t.name if hasattr(t, "name") and t is not None else str(t) if t is not None else None
+            lambda t: (
+                t.name
+                if hasattr(t, "name") and t is not None
+                else str(t) if t is not None else None
+            )
         )
 
     return {
@@ -73,6 +81,7 @@ def list_open_competitions() -> pd.DataFrame:
         season_id, season_name, competition_gender
     """
     from statsbombpy import sb
+
     return sb.competitions()
 
 
@@ -88,6 +97,7 @@ def list_open_matches(competition_id: int, season_id: int) -> pd.DataFrame:
         DataFrame with match_id, home_team, away_team, match_date, score
     """
     from statsbombpy import sb
+
     matches = sb.matches(competition_id=competition_id, season_id=season_id)
     return matches
 
@@ -96,8 +106,12 @@ def get_match_metadata(match_id: int) -> dict:
     """
     Return basic metadata for a StatsBomb match without loading full events.
 
+    Args:
+        match_id: StatsBomb match ID to look up.
+
     Returns:
-        dict with home_team, away_team, score, competition, season, date
+        dict with home_team, away_team, score, competition, season, date.
+        Returns a minimal dict with match_id only if the match is not found.
     """
     from statsbombpy import sb
 
@@ -122,7 +136,7 @@ def get_match_metadata(match_id: int) -> dict:
                     "season": row["season_name"],
                     "date": str(m.get("match_date", "")),
                 }
-        except Exception:
+        except (ValueError, KeyError):
             continue
 
     return {"match_id": match_id, "home_team": "Unknown", "away_team": "Unknown"}

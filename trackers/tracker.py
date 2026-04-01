@@ -10,8 +10,10 @@ sys.path.append('../')
 from utils import get_center_of_bbox, get_bbox_width, get_foot_position
 
 class Tracker:
-    def __init__(self, model_path):
+    def __init__(self, model_path, ball_model_path=None):
         self.model = YOLO(model_path)
+        # Optional dedicated ball detection model (e.g. basketball-specific)
+        self.ball_model = YOLO(ball_model_path) if ball_model_path else None
         # BoT-SORT: appearance Re-ID built in — handles occlusions and camera cuts
         # Falls back to ByteTrack motion-only matching if Re-ID embeddings unavailable
         self.tracker = sv.ByteTrack()   # kept for ball/referee (no Re-ID needed)
@@ -68,6 +70,22 @@ class Tracker:
             detections += detections_batch
         return detections
 
+    def _detect_ball_frames(self, frames):
+        """
+        Run dedicated ball model detection (basketball-specific).
+
+        Used when self.ball_model is set. Returns the same list-of-Results
+        format as detect_frames() so callers can swap in this path transparently.
+        """
+        batch_size = 20
+        detections = []
+        for i in range(0, len(frames), batch_size):
+            batch = self.ball_model.predict(
+                frames[i:i + batch_size], conf=0.1, verbose=False
+            )
+            detections += batch
+        return detections
+
     def track_frames(self, frames):
         """
         Run BoT-SORT tracking via ultralytics model.track().
@@ -106,11 +124,15 @@ class Tracker:
         tracked_results = self.track_frames(frames)
 
         # Plain detection for ball (tiny object — tracker IDs not needed, just position)
-        det_results = self.detect_frames(frames)
+        # Use dedicated ball model when available (basketball), else fall back to player model
+        if self.ball_model is not None:
+            ball_det_results = self._detect_ball_frames(frames)
+        else:
+            ball_det_results = self.detect_frames(frames)
 
-        for frame_num, (tracked, detected) in enumerate(zip(tracked_results, det_results)):
+        for frame_num, tracked in enumerate(tracked_results):
+            detected = ball_det_results[frame_num]
             cls_names = tracked.names
-            cls_names_inv = {v: k for k, v in cls_names.items()}
 
             tracks["players"].append({})
             tracks["referees"].append({})
@@ -137,12 +159,27 @@ class Tracker:
                     elif class_name == "referee":
                         tracks["referees"][frame_num][track_id] = {"bbox": box}
 
-            # --- Ball from plain detection (always track_id=1) ---
+            # --- Ball from detection (always track_id=1) ---
             det_sv = sv.Detections.from_ultralytics(detected)
-            for i, cls_id in enumerate(det_sv.class_id):
-                if cls_names[cls_id] == "ball":
-                    tracks["ball"][frame_num][1] = {"bbox": det_sv.xyxy[i].tolist()}
-                    break  # take first/best ball detection per frame
+            ball_cls_names = self.ball_model.names if self.ball_model is not None else cls_names
+            if self.ball_model is not None:
+                # Dedicated ball model: filter for any class whose name contains "ball"
+                # Works for custom models ("ball"/"Ball") and yolov8n COCO ("sports ball")
+                best_conf, best_bbox = -1.0, None
+                for i, cls_id in enumerate(det_sv.class_id):
+                    if "ball" in ball_cls_names[int(cls_id)].lower():
+                        conf = float(det_sv.confidence[i]) if det_sv.confidence is not None else 1.0
+                        if conf > best_conf:
+                            best_conf = conf
+                            best_bbox = det_sv.xyxy[i].tolist()
+                if best_bbox is not None:
+                    tracks["ball"][frame_num][1] = {"bbox": best_bbox}
+            else:
+                # Player model: filter by class name "ball"
+                for i, cls_id in enumerate(det_sv.class_id):
+                    if cls_names[cls_id] == "ball":
+                        tracks["ball"][frame_num][1] = {"bbox": det_sv.xyxy[i].tolist()}
+                        break  # take first/best ball detection per frame
 
         if stub_path is not None:
             with open(stub_path, 'wb') as f:
@@ -193,9 +230,12 @@ class Tracker:
                 break
 
             tracked_results = self.track_frames(chunk)
-            det_results     = self.detect_frames(chunk)
+            if self.ball_model is not None:
+                ball_det_results = self._detect_ball_frames(chunk)
+            else:
+                ball_det_results = self.detect_frames(chunk)
 
-            for tracked, detected in zip(tracked_results, det_results):
+            for tracked, detected in zip(tracked_results, ball_det_results):
                 cls_names = tracked.names
 
                 tracks["players"].append({})
@@ -221,10 +261,22 @@ class Tracker:
                             tracks["referees"][frame_idx][track_id] = {"bbox": box}
 
                 det_sv = sv.Detections.from_ultralytics(detected)
-                for i, cls_id in enumerate(det_sv.class_id):
-                    if cls_names[int(cls_id)] == "ball":
-                        tracks["ball"][frame_idx][1] = {"bbox": det_sv.xyxy[i].tolist()}
-                        break
+                ball_cls_names = self.ball_model.names if self.ball_model is not None else cls_names
+                if self.ball_model is not None:
+                    best_conf, best_bbox = -1.0, None
+                    for i, cls_id in enumerate(det_sv.class_id):
+                        if "ball" in ball_cls_names[int(cls_id)].lower():
+                            conf = float(det_sv.confidence[i]) if det_sv.confidence is not None else 1.0
+                            if conf > best_conf:
+                                best_conf = conf
+                                best_bbox = det_sv.xyxy[i].tolist()
+                    if best_bbox is not None:
+                        tracks["ball"][frame_idx][1] = {"bbox": best_bbox}
+                else:
+                    for i, cls_id in enumerate(det_sv.class_id):
+                        if cls_names[int(cls_id)] == "ball":
+                            tracks["ball"][frame_idx][1] = {"bbox": det_sv.xyxy[i].tolist()}
+                            break
 
             processed += len(chunk)
             print(f"  {processed}/{total} frames tracked ({processed/total*100:.0f}%)", end="\r")

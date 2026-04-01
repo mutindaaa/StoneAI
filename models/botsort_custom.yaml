@@ -3,7 +3,7 @@ tracker_type: botsort
 # Detection thresholds — raised from defaults to reduce ghost detections / fragmentation
 track_high_thresh: 0.5    # min confidence to initialize a new track (default: 0.25)
 track_low_thresh: 0.1     # min confidence to associate with existing track
-new_track_thresh: 0.6     # min confidence for brand new track (default: 0.25)
+new_track_thresh: 0.7     # min confidence for brand new track — raised to suppress ghost spawns
 
 # Retention — hold lost tracks for 3 seconds before dropping (90 frames @ 30fps)
 # Prevents re-ID when a player briefly leaves frame during a camera pan (default: 30)
@@ -18,6 +18,6 @@ gmc_method: sparseOptFlow
 
 # ReID settings
 proximity_thresh: 0.5
-appearance_thresh: 0.8
-with_reid: False          # disabled — player appearance changes too much under field lighting
+appearance_thresh: 0.25   # lower = stricter appearance match — reduces false re-links after occlusion
+with_reid: False          # disabled — overhead view lacks jersey features; ReID adds noise
 model: auto

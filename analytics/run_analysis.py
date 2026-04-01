@@ -35,6 +35,8 @@ import os
 import sys
 from pathlib import Path
 
+from analytics.config import DEFAULT_OUTPUT_DIR, TOP_PLAYERS_N
+
 # Force UTF-8 stdout/stderr on Windows so non-ASCII player names don't crash
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -56,16 +58,22 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def run_statsbomb(match_id: int, output_dir: str):
-    """Full analytics pipeline on a StatsBomb open data match."""
-    from analytics.statsbomb_loader import load_match
+def run_statsbomb(match_id: int, output_dir: str) -> None:
+    """
+    Full analytics pipeline on a StatsBomb open data match.
+
+    Args:
+        match_id:    StatsBomb match ID (e.g. 3788741).
+        output_dir:  Root output directory; results go into <output_dir>/<match_id>/.
+    """
     from analytics.spadl_pipeline import compute_xt, load_or_fit_xt_grid, top_players_by_xt
+    from analytics.statsbomb_loader import load_match
     from analytics.visualizer import pass_network, save_figure, shot_map, xt_bar_chart
 
     logger.info("[StatsBomb] Loading match %d...", match_id)
     try:
         result = load_match(match_id)
-    except Exception as e:
+    except (ValueError, KeyError, RuntimeError) as e:
         logger.error("Failed to load match %d: %s", match_id, e)
         sys.exit(1)
 
@@ -84,7 +92,7 @@ def run_statsbomb(match_id: int, output_dir: str):
 
     # --- Build actions DataFrame for xT scoring ---
     # (bypasses pandera-dependent SPADL conversion; uses kloppy event coords directly)
-    x_col, y_col   = "coordinates_x",     "coordinates_y"
+    x_col, y_col = "coordinates_x", "coordinates_y"
     ex_col, ey_col = "end_coordinates_x", "end_coordinates_y"
 
     move_events = events_df[
@@ -95,31 +103,41 @@ def run_statsbomb(match_id: int, output_dir: str):
     xt_df = None
 
     if not move_events.empty and x_col in move_events.columns:
-        actions_df = move_events[[x_col, y_col, ex_col, ey_col, "player", "team", "event_type"]].copy()
-        actions_df = actions_df.rename(columns={
-            x_col: "start_x",   y_col: "start_y",
-            ex_col: "end_x",    ey_col: "end_y",
-            "player": "player_id",
-            "team":   "team_id",
-            "event_type": "type_name",
-        })
+        actions_df = move_events[
+            [x_col, y_col, ex_col, ey_col, "player", "team", "event_type"]
+        ].copy()
+        actions_df = actions_df.rename(
+            columns={
+                x_col: "start_x",
+                y_col: "start_y",
+                ex_col: "end_x",
+                ey_col: "end_y",
+                "player": "player_id",
+                "team": "team_id",
+                "event_type": "type_name",
+            }
+        )
         # kloppy normalizes coordinates to [0, 1] — scale to metres (105×68)
         actions_df["start_x"] = actions_df["start_x"] * 105.0
         actions_df["start_y"] = actions_df["start_y"] * 68.0
-        actions_df["end_x"]   = actions_df["end_x"].fillna(actions_df["start_x"]) * 105.0
-        actions_df["end_y"]   = actions_df["end_y"].fillna(actions_df["start_y"]) * 68.0
+        actions_df["end_x"] = actions_df["end_x"].fillna(actions_df["start_x"]) * 105.0
+        actions_df["end_y"] = actions_df["end_y"].fillna(actions_df["start_y"]) * 68.0
         actions_df["result_name"] = "success"
 
         # Validate coordinate ranges before xT scoring
         logger.info(
             "Actions coordinate ranges — start_x: [%.2f, %.2f]  start_y: [%.2f, %.2f]",
-            float(actions_df["start_x"].min()), float(actions_df["start_x"].max()),
-            float(actions_df["start_y"].min()), float(actions_df["start_y"].max()),
+            float(actions_df["start_x"].min()),
+            float(actions_df["start_x"].max()),
+            float(actions_df["start_y"].min()),
+            float(actions_df["start_y"].max()),
         )
         logger.info(
             "  end_x: [%.2f, %.2f]  end_y: [%.2f, %.2f]",
-            float(actions_df["end_x"].min()), float(actions_df["end_x"].max()),
-            float(actions_df["end_y"].min()), float(actions_df["end_y"].max()),
+            float(actions_df["end_x"].min()),
+            float(actions_df["end_x"].max()),
+            float(actions_df["end_y"].min()),
+            float(actions_df["end_y"].max()),
         )
         logger.info(
             "  type_name values: %s",
@@ -133,10 +151,12 @@ def run_statsbomb(match_id: int, output_dir: str):
         logger.info("[xT] Scoring %d actions...", len(actions_df))
         actions_df = compute_xt(actions_df, grid=xt_grid)
 
-        xt_df = top_players_by_xt(actions_df, n=15)
+        xt_df = top_players_by_xt(actions_df, n=TOP_PLAYERS_N)
         if not xt_df.empty:
             top = xt_df.iloc[0]["player_id"]
-            logger.info("Top player by xT: %s  (total_xt=%.4f)", top, float(xt_df.iloc[0]["total_xt"]))
+            logger.info(
+                "Top player by xT: %s  (total_xt=%.4f)", top, float(xt_df.iloc[0]["total_xt"])
+            )
         else:
             logger.warning("xT table is empty — no pass/carry/dribble actions were scored")
     else:
@@ -151,7 +171,7 @@ def run_statsbomb(match_id: int, output_dir: str):
     try:
         fig, _ = shot_map(events_df, title=f"Shot Map — match {match_id}")
         save_figure(fig, str(out / "shot_map.png"))
-    except Exception as e:
+    except (ValueError, KeyError, RuntimeError) as e:
         logger.warning("Shot map failed: %s", e)
 
     # Pass networks
@@ -161,7 +181,7 @@ def run_statsbomb(match_id: int, output_dir: str):
             fig, _ = pass_network(events_df, team=team)
             fname = f"pass_network_{team.replace(' ', '_')}.png"
             save_figure(fig, str(out / fname))
-        except Exception as e:
+        except (ValueError, KeyError, RuntimeError) as e:
             logger.warning("Pass network failed for %s: %s", team, e)
 
     # xT bar chart + CSV
@@ -180,10 +200,16 @@ def run_statsbomb(match_id: int, output_dir: str):
     logger.info("All outputs saved to: %s/", out)
 
 
-def run_video(events_path: str, output_dir: str):
-    """Analytics pipeline on video-derived events JSON."""
-    from analytics.video_bridge import infer_frame_dimensions, load_video_events
+def run_video(events_path: str, output_dir: str) -> None:
+    """
+    Analytics pipeline on video-derived events JSON.
+
+    Args:
+        events_path:  Path to *_events.json produced by main_v3.py.
+        output_dir:   Root output directory; results go into <output_dir>/<stem>/.
+    """
     from analytics.spadl_pipeline import compute_xt, load_or_fit_xt_grid, top_players_by_xt
+    from analytics.video_bridge import infer_frame_dimensions, load_video_events
     from analytics.visualizer import save_figure, shot_map, xt_bar_chart
 
     logger.info("[Video] Loading events from %s...", events_path)
@@ -200,8 +226,10 @@ def run_video(events_path: str, output_dir: str):
     # Validate coordinate ranges
     logger.info(
         "Coordinate ranges — start_x: [%.2f, %.2f]  start_y: [%.2f, %.2f]",
-        float(actions_df["start_x"].min()), float(actions_df["start_x"].max()),
-        float(actions_df["start_y"].min()), float(actions_df["start_y"].max()),
+        float(actions_df["start_x"].min()),
+        float(actions_df["start_x"].max()),
+        float(actions_df["start_y"].min()),
+        float(actions_df["start_y"].max()),
     )
 
     logger.info("[xT] Loading/fitting xT model...")
@@ -209,7 +237,7 @@ def run_video(events_path: str, output_dir: str):
 
     logger.info("[xT] Scoring %d actions...", len(actions_df))
     actions_df = compute_xt(actions_df, grid=xt_grid)
-    xt_df = top_players_by_xt(actions_df, n=15)
+    xt_df = top_players_by_xt(actions_df, n=TOP_PLAYERS_N)
 
     # --- Outputs ---
     match_stem = Path(events_path).stem.replace("_events", "")
@@ -219,8 +247,8 @@ def run_video(events_path: str, output_dir: str):
     # Shot map
     shots = actions_df[actions_df["type_name"] == "shot"].rename(
         columns={
-            "start_x":   "coordinates_x",
-            "start_y":   "coordinates_y",
+            "start_x": "coordinates_x",
+            "start_y": "coordinates_y",
             "type_name": "event_type",
             "result_name": "result",
         }
@@ -245,7 +273,10 @@ def run_video(events_path: str, output_dir: str):
     logger.info("All outputs saved to: %s/", out)
 
 
-def main():
+def main() -> None:
+    """
+    CLI entry point — parse arguments and dispatch to run_statsbomb or run_video.
+    """
     parser = argparse.ArgumentParser(
         description="Stone AI Analytics — run data analytics on a match",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -272,8 +303,8 @@ def main():
     parser.add_argument(
         "--output",
         type=str,
-        default="output_videos/analytics",
-        help="Output directory for plots and CSVs (default: output_videos/analytics)",
+        default=DEFAULT_OUTPUT_DIR,
+        help=f"Output directory for plots and CSVs (default: {DEFAULT_OUTPUT_DIR})",
     )
 
     args = parser.parse_args()

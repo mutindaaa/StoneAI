@@ -5,7 +5,10 @@
       "Bash(grep -n \"def map_tracking_id_to_player\" \"c:/Users/ASTUF1/.vscode/football_analysis/rf_analytics/\"*.py)",
       "Bash(python analytics/run_analysis.py --source video --events output_videos/chicago_u19_vs_scwave_sep14_events.json)",
       "Bash(pip install:*)",
-      "Bash(python analytics/run_analysis.py --source statsbomb --match_id 3788741)"
+      "Bash(python analytics/run_analysis.py --source statsbomb --match_id 3788741)",
+      "Bash(python -m black analytics/)",
+      "Bash(where python:*)",
+      "Bash(python -m pip show black ruff)"
     ]
   }
 }
